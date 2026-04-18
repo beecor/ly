@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Liayang | 智慧能源解决方案</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/components.js" defer></script>
+    <style>
+        /* 首页专属样式（不影响全局） */
+        .hero-home {
+            background: linear-gradient(105deg, #1f4e3e 0%, #2c6e54 100%);
+            color: white;
+            padding: 4rem 0 5rem;
+            border-radius: 0 0 3rem 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-home::before {
+            content: "⚡";
+            font-size: 20rem;
+            opacity: 0.08;
+            position: absolute;
+            bottom: -3rem;
+            right: -3rem;
+            pointer-events: none;
+        }
+        .hero-home .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3rem;
+        }
+        .hero-home h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .hero-home p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 550px;
+            margin-bottom: 1.5rem;
+        }
+        .hero-home .btn-large {
+            background: var(--gold);
+            color: #1a4a3a;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.2s;
+        }
+        .hero-home .btn-large:hover {
+            background: #e0b050;
+            transform: translateY(-3px);
+        }
+        /* 轮播图样式 */
+        .carousel-section {
+            margin: 2rem 0 2rem;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            flex: 0 0 100%;
+            position: relative;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+        .carousel-caption {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            background: rgba(26, 74, 58, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            color: white;
+            max-width: 60%;
+        }
+        .carousel-caption h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .carousel-caption p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        /* 轮播控制按钮 */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .carousel-btn:hover {
+            background: var(--gold);
+            color: #1a4a3a;
+        }
+        .carousel-btn.prev {
+            left: 20px;
+        }
+        .carousel-btn.next {
+            right: 20px;
+        }
+        /* 指示点 */
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            z-index: 10;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .dot.active {
+            background: var(--gold);
+            transform: scale(1.2);
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero-home h1 { font-size: 2rem; }
+            .carousel-caption { bottom: 10%; left: 5%; padding: 0.5rem 1rem; max-width: 80%; }
+            .carousel-caption h3 { font-size: 1.2rem; }
+            .carousel-caption p { font-size: 0.7rem; }
+            .carousel-btn { width: 30px; height: 30px; font-size: 0.9rem; }
+        }
+        /* 其他原有样式 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .category-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #f0e2cf;
+        }
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        .category-icon {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .category-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--deep-green);
+        }
+        .category-card p {
+            color: #5b6e8c;
+            margin-bottom: 1.5rem;
+        }
+        .category-btn {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--deep-green);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.2s;
+        }
+        .category-btn:hover {
+            background: var(--gold);
+            color: white;
+        }
+        .advantage-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .advantage-item {
+            flex: 1;
+            min-width: 180px;
+            text-align: center;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 2rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+        }
+        .advantage-item i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .advantage-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--deep-green);
+        }
+        .cert-section {
+            background: linear-gradient(135deg, #e8f0ea 0%, #fff7eb 100%);
+            border-radius: 2rem;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .cert-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .cert-logos span {
+            font-size: 1rem;
+            font-weight: 500;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero 区域 -->
+    <section class="hero-home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 id="heroTitle">智慧能源解决方案<br>驱动零碳未来</h1>
+                    <p id="heroDesc">我们提供从移动电源车到大型储能集装箱、从工商业储能到工程机械PACK的全场景能源解决方案。安全、高效、长寿命，助力中东及全球能源转型。</p>
+                    <a href="custom.html" class="btn-large" id="heroBtn">探索产品 <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="hero-icon">
+                    <i class="fas fa-solar-panel"></i>
+                    <i class="fas fa-charging-station"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- 轮播图区域 -->
+        <div class="carousel-section">
+            <div class="carousel-container">
+                <div class="carousel-slides" id="carouselSlides">
+                    <!-- 图片1：请替换 src 为实际图片地址 -->
+                    <div class="carousel-slide">
+                        <img src="https://img.liayang.com/zd/index-1.jpg" alt="Mobile Power Station">
+                        <div class="carousel-caption">
+                            <h3 id="slide1Title">移动电源车</h3>
+                            <p id="slide1Desc">灵活部署，应急供电，矿区作业首选</p>
+                        </div>
+                    </div>
+                    <!-- 图片2 -->
+                    <div class="carousel-slide">
+                        <img src="https://img.liayang.com/zd/index-2.jpg" alt="Containerized ESS" loading="lazy">
+                        <div class="carousel-caption">
+                            <h3 id="slide2Title">集装箱储能系统</h3>
+                            <p id="slide2Desc">3.72MWh / 5MWh，液冷温控，高效安全</p>
+                        </div>
+                    </div>
+                    <!-- 图片3 -->
+                    <div class="carousel-slide">
+                        <img src="https://img.liayang.com/zd/index-3.jpg" alt="C&I Storage" loading="lazy">
+                        <div class="carousel-caption">
+                            <h3 id="slide3Title">工商业储能</h3>
+                            <p id="slide3Desc">户储、光储一体机、户外柜，峰谷套利</p>
+                        </div>
+                    </div>
+                    <!-- 图片4 -->
+                    <div class="carousel-slide">
+                        <img src="https://img.liayang.com/zd/index-4.jpg" alt="PACK Series" loading="lazy">
+                        <div class="carousel-caption">
+                            <h3 id="slide4Title">PACK系列</h3>
+                            <p id="slide4Desc">高能量密度液冷PACK，工程机械快充方案</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 控制按钮 -->
+                <button class="carousel-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                <!-- 指示点 -->
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </div>
+
+        <!-- 产品系列卡片 -->
+        <div class="title-decoration">
+            <i class="fas fa-cubes"></i>
+            <h2 class="section-title" id="productsTitle">产品系列</h2>
+            <p id="productsSub" style="color: #7b6e5c;">全场景能源存储解决方案，满足多样化需求</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-truck-moving"></i></div>
+                <h3 id="catMobileTitle">移动储能</h3>
+                <p id="catMobileDesc">小型至超大型电源车，适用于应急供电、矿区、基建、拖电挖机等场景。</p>
+                <a href="small.html" class="category-btn" id="catMobileBtn">查看详情 →</a>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-building"></i></div>
+                <h3 id="catFixedTitle">固定储能</h3>
+                <p id="catFixedDesc">工商业储能柜、光储一体机、液冷集装箱，支持峰谷套利、应急备电。</p>
+                <a href="ess-residential.html" class="category-btn" id="catFixedBtn">查看详情 →</a>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-microchip"></i></div>
+                <h3 id="catPackTitle">PACK系列</h3>
+                <p id="catPackDesc">高能量密度液冷PACK、工程机械快充PACK，适配储能柜及重载设备。</p>
+                <a href="pack-280ah.html" class="category-btn" id="catPackBtn">查看详情 →</a>
+            </div>
+        </div>
+
+        <!-- 核心优势 -->
+        <div class="title-decoration">
+            <i class="fas fa-star-of-life"></i>
+            <h2 class="section-title" id="advantageTitle">为什么选择我们的产品</h2>
+            <p id="advantageSub" style="color: #7b6e5c;">技术领先 · 安全可靠 · 全球服务</p>
+        </div>
+        <div class="advantage-row">
+            <div class="advantage-item">
+                <i class="fas fa-shield-alt"></i>
+                <h4 id="adv1Title">多重安全防护</h4>
+                <p id="adv1Desc">PACK级、舱级、水消防三级防护，防爆阀、电子除湿，确保运营安全。</p>
+            </div>
+            <div class="advantage-item">
+                <i class="fas fa-chart-line"></i>
+                <h4 id="adv2Title">高效能量转换</h4>
+                <p id="adv2Desc">整柜效率≥88%，PCS效率≥98%，较行业平均水平提升3-5%。</p>
+            </div>
+            <div class="advantage-item">
+                <i class="fas fa-sync-alt"></i>
+                <h4 id="adv3Title">超长循环寿命</h4>
+                <p id="adv3Desc">磷酸铁锂电芯，8000次循环，整柜保用12年，可用15年。</p>
+            </div>
+            <div class="advantage-item">
+                <i class="fas fa-globe-asia"></i>
+                <h4 id="adv4Title">全球认证交付</h4>
+                <p id="adv4Desc">CE、海运认证，已批量交付澳洲、中东市场。</p>
+            </div>
+        </div>
+
+        <!-- 认证与合作伙伴 -->
+        <div class="cert-section">
+            <h3 id="certTitle" style="color: var(--deep-green); margin-bottom: 0.5rem;">权威认证 · 全球信赖</h3>
+            <div class="cert-logos">
+                <span><i class="fas fa-check-circle"></i> CE 认证</span>
+                <span><i class="fas fa-ship"></i> 海运认证</span>
+                <span><i class="fas fa-tachometer-alt"></i> ISO9001</span>
+                <span><i class="fas fa-charging-station"></i> 澳洲CEC列名</span>
+            </div>
+        </div>
+
+        <!-- 联系区域（与产品页面一致） -->
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt"></i> <span id="contactTitle">联系我们</span></h3>
+                    <div class="contact-detail"><i class="fas fa-phone"></i> <span id="contactPhone">0371-55919895</span></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> <span id="contactEmail">sales@liayang.com</span></div>
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span id="contactAddress">中国 河南郑州市大学南路246号</span></div>
+                    <div class="contact-detail"><i class="fas fa-mobile-alt"></i> <span id="contactMobile">13383710735</span></div>
+                </div>
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> <span id="formTitle">快速咨询</span></h3>
+                    <form id="quickContact">
+                        <input type="text" id="contactName" placeholder="您的姓名" required>
+                        <input type="email" id="contactEmailInput" placeholder="电子邮箱" required>
+                        <textarea rows="2" id="contactMsg" placeholder="留言 (产品型号、需求等)"></textarea>
+                        <button type="submit" id="submitBtn"><span id="submitBtnText">发送咨询</span> <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <div id="formStatus" style="margin-top:0.8rem;font-size:0.8rem;text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // ========== 轮播图逻辑 ==========
+        const slides = document.querySelectorAll('.carousel-slide');
+        const slidesContainer = document.getElementById('carouselSlides');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('carouselDots');
+        let currentIndex = 0;
+        let autoInterval;
+        const totalSlides = slides.length;
+        let isTransitioning = false;
+
+        // 创建指示点
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // 更新指示点样式
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, idx) => {
+                if (idx === currentIndex) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+        }
+
+        // 切换到指定 slide
+        function goToSlide(index) {
+            if (isTransitioning) return;
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            currentIndex = index;
+            isTransitioning = true;
+            slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots();
+            setTimeout(() => { isTransitioning = false; }, 500);
+            resetAutoPlay();
+        }
+
+        function nextSlide() { goToSlide(currentIndex + 1); }
+        function prevSlide() { goToSlide(currentIndex - 1); }
+
+        function resetAutoPlay() {
+            if (autoInterval) clearInterval(autoInterval);
+            autoInterval = setInterval(() => { nextSlide(); }, 5000);
+        }
+
+        // 绑定事件
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        createDots();
+        resetAutoPlay();
+
+        // 确保触摸屏上滑动可平滑（简单处理，防止误触）
+        // 可选：添加触摸滑动支持（略）
+
+        // ========== 首页多语言配置 ==========
+        const homeLocales = {
+            en: {
+                heroTitle: "Smart Energy Solutions<br>Driving a Zero-Carbon Future",
+                heroDesc: "Liayang provides full-scenario energy solutions from mobile power stations to large-scale storage containers, from C&I storage to construction machinery PACKs. Safe, efficient, long-life, empowering energy transition in Middle East and beyond.",
+                heroBtn: "Explore Products",
+                slide1Title: "Mobile Power Station",
+                slide1Desc: "Flexible deployment, emergency power, mining operations",
+                slide2Title: "Containerized ESS",
+                slide2Desc: "3.72MWh / 5MWh, liquid cooling, efficient and safe",
+                slide3Title: "C&I Energy Storage",
+                slide3Desc: "Residential, PV-ESS, outdoor cabinets, peak-valley arbitrage",
+                slide4Title: "PACK Series",
+                slide4Desc: "High energy density liquid-cooled PACK, fast-charge for heavy machinery",
+                productsTitle: "Product Series",
+                productsSub: "Full-scenario energy storage solutions for diverse needs",
+                catMobileTitle: "Mobile ESS",
+                catMobileDesc: "Small to ultra-large power stations for emergency power, mining, infrastructure, and electric excavators.",
+                catMobileBtn: "View Details →",
+                catFixedTitle: "Fixed ESS",
+                catFixedDesc: "C&I storage cabinets, PV-ESS integrated machines, liquid-cooled containers for peak-valley arbitrage and backup.",
+                catFixedBtn: "View Details →",
+                catPackTitle: "PACK Series",
+                catPackDesc: "High energy density liquid-cooled PACKs, fast-charge PACKs for construction machinery, suitable for cabinets and heavy equipment.",
+                catPackBtn: "View Details →",
+                advantageTitle: "Why Liayang",
+                advantageSub: "Technology Leadership · Safety & Reliability · Global Service",
+                adv1Title: "Multi-level Safety",
+                adv1Desc: "PACK, compartment, water fire protection, explosion-proof valves, electronic dehumidifiers for safe operation.",
+                adv2Title: "High Efficiency",
+                adv2Desc: "Overall cabinet efficiency ≥88%, PCS efficiency ≥98%, 3-5% higher than industry average.",
+                adv3Title: "Long Cycle Life",
+                adv3Desc: "LFP cells, 8000 cycles, cabinet warranty 12 years, service life 15 years.",
+                adv4Title: "Global Certifications",
+                adv4Desc: "CE, Marine certified, delivered to Australia and Middle East.",
+                certTitle: "Authoritative Certifications · Global Trust",
+                contactTitle: "Contact Us", contactPhone: "0371-55919895", contactEmail: "sales@liayang.com",
+                contactAddress: "No.246, Daxue South Rd, Zhengzhou, China", contactMobile: "13383710735",
+                formTitle: "Quick Inquiry", submitBtnText: "Send"
+            },
+            zh: {
+                heroTitle: "智慧能源解决方案<br>驱动零碳未来",
+                heroDesc: "我们提供从移动电源车到大型储能集装箱、从工商业储能到工程机械PACK的全场景能源解决方案。安全、高效、长寿命，助力中东及全球能源转型。",
+                heroBtn: "探索产品",
+                slide1Title: "移动电源车",
+                slide1Desc: "灵活部署，应急供电，矿区作业首选",
+                slide2Title: "集装箱储能系统",
+                slide2Desc: "3.72MWh / 5MWh，液冷温控，高效安全",
+                slide3Title: "工商业储能",
+                slide3Desc: "户储、光储一体机、户外柜，峰谷套利",
+                slide4Title: "PACK系列",
+                slide4Desc: "高能量密度液冷PACK，工程机械快充方案",
+                productsTitle: "产品系列",
+                productsSub: "全场景能源存储解决方案，满足多样化需求",
+                catMobileTitle: "移动储能",
+                catMobileDesc: "小型至超大型电源车，适用于应急供电、矿区、基建、拖电挖机等场景。",
+                catMobileBtn: "查看详情 →",
+                catFixedTitle: "固定储能",
+                catFixedDesc: "工商业储能柜、光储一体机、液冷集装箱，支持峰谷套利、应急备电。",
+                catFixedBtn: "查看详情 →",
+                catPackTitle: "PACK系列",
+                catPackDesc: "高能量密度液冷PACK、工程机械快充PACK，适配储能柜及重载设备。",
+                catPackBtn: "查看详情 →",
+                advantageTitle: "为什么选择我们的产品",
+                advantageSub: "技术领先 · 安全可靠 · 全球服务",
+                adv1Title: "多重安全防护",
+                adv1Desc: "PACK级、舱级、水消防三级防护，防爆阀、电子除湿，确保运营安全。",
+                adv2Title: "高效能量转换",
+                adv2Desc: "整柜效率≥88%，PCS效率≥98%，较行业平均水平提升3-5%。",
+                adv3Title: "超长循环寿命",
+                adv3Desc: "磷酸铁锂电芯，8000次循环，整柜保用12年，可用15年。",
+                adv4Title: "全球认证交付",
+                adv4Desc: "CE、海运认证，已批量交付澳洲、中东市场。",
+                certTitle: "权威认证 · 全球信赖",
+                contactTitle: "联系我们", contactPhone: "0371-55919895", contactEmail: "sales@liayang.com",
+                contactAddress: "中国 河南郑州市大学南路246号", contactMobile: "13383710735",
+                formTitle: "快速咨询", submitBtnText: "发送咨询"
+            },
+            ar: {
+                heroTitle: "حلول طاقة ذكية<br>دفع مستقبل خالٍ من الكربون",
+                heroDesc: "توفر باور الصحراء حلول طاقة شاملة من محطات الطاقة المتنقلة إلى حاويات التخزين الكبيرة، ومن التخزين التجاري والصناعي إلى حزم PACK للمعدات الهندسية. آمنة وفعالة وطويلة العمر، تدعم تحول الطاقة في الشرق الأوسط والعالم.",
+                heroBtn: "استكشف المنتجات",
+                slide1Title: "محطة طاقة متنقلة",
+                slide1Desc: "نشر مرن، طاقة طوارئ، عمليات التعدين",
+                slide2Title: "نظام تخزين الحاويات",
+                slide2Desc: "3.72MWh / 5MWh، تبريد سائل، فعال وآمن",
+                slide3Title: "تخزين تجاري وصناعي",
+                slide3Desc: "سكني، PV-ESS، خزائن خارجية، مراجحة الذروة",
+                slide4Title: "سلسلة PACK",
+                slide4Desc: "حزمة PACK عالية كثافة الطاقة بالتبريد السائل، شحن سريع للمعدات الثقيلة",
+                productsTitle: "سلسلة المنتجات",
+                productsSub: "حلول تخزين طاقة شاملة لمختلف الاحتياجات",
+                catMobileTitle: "تخزين متنقل",
+                catMobileDesc: "محطات طاقة صغيرة إلى فائقة الضخامة للطوارئ والمناجم والبنية التحتية والحفارات الكهربائية.",
+                catMobileBtn: "عرض التفاصيل ←",
+                catFixedTitle: "تخزين ثابت",
+                catFixedDesc: "خزائن تخزين تجارية، آلات متكاملة PV-ESS، حاويات تبريد سائل لمراجحة الذروة والطاقة الاحتياطية.",
+                catFixedBtn: "عرض التفاصيل ←",
+                catPackTitle: "سلسلة PACK",
+                catPackDesc: "حزم PACK عالية كثافة الطاقة بالتبريد السائل، حزم شحن سريع للمعدات الهندسية، مناسبة للخزائن والمعدات الثقيلة.",
+                catPackBtn: "عرض التفاصيل ←",
+                advantageTitle: "لماذا باور الصحراء",
+                advantageSub: "ريادة تقنية · أمان وموثوقية · خدمة عالمية",
+                adv1Title: "سلامة متعددة المستويات",
+                adv1Desc: "إطفاء على مستوى PACK والمقصورة والماء، صمامات مانعة للانفجار، مزيلات رطوبة إلكترونية لتشغيل آمن.",
+                adv2Title: "كفاءة عالية",
+                adv2Desc: "كفاءة الخزانة ≥88%، كفاءة PCS ≥98%، أعلى بنسبة 3-5% من متوسط الصناعة.",
+                adv3Title: "عمر دورة طويل",
+                adv3Desc: "خلايا LFP، 8000 دورة، ضمان الخزانة 12 سنة، عمر خدمة 15 سنة.",
+                adv4Title: "شهادات عالمية",
+                adv4Desc: "شهادات CE وبحرية، تم التسليم لأستراليا والشرق الأوسط.",
+                certTitle: "شهادات موثوقة · ثقة عالمية",
+                contactTitle: "اتصل بنا", contactPhone: "0371-55919895", contactEmail: "sales@liayang.com",
+                contactAddress: "رقم 246، طريق داشوي الجنوبي، تشنغتشو، خنان، الصين", contactMobile: "13383710735",
+                formTitle: "استفسار سريع", submitBtnText: "إرسال"
+            }
+        };
+
+        function updateHomeUI(lang) {
+            const loc = homeLocales[lang];
+            if (!loc) return;
+            document.getElementById("heroTitle").innerHTML = loc.heroTitle;
+            document.getElementById("heroDesc").innerText = loc.heroDesc;
+            document.getElementById("heroBtn").innerText = loc.heroBtn;
+            document.getElementById("slide1Title").innerText = loc.slide1Title;
+            document.getElementById("slide1Desc").innerText = loc.slide1Desc;
+            document.getElementById("slide2Title").innerText = loc.slide2Title;
+            document.getElementById("slide2Desc").innerText = loc.slide2Desc;
+            document.getElementById("slide3Title").innerText = loc.slide3Title;
+            document.getElementById("slide3Desc").innerText = loc.slide3Desc;
+            document.getElementById("slide4Title").innerText = loc.slide4Title;
+            document.getElementById("slide4Desc").innerText = loc.slide4Desc;
+            document.getElementById("productsTitle").innerText = loc.productsTitle;
+            document.getElementById("productsSub").innerText = loc.productsSub;
+            document.getElementById("catMobileTitle").innerText = loc.catMobileTitle;
+            document.getElementById("catMobileDesc").innerText = loc.catMobileDesc;
+            document.getElementById("catMobileBtn").innerText = loc.catMobileBtn;
+            document.getElementById("catFixedTitle").innerText = loc.catFixedTitle;
+            document.getElementById("catFixedDesc").innerText = loc.catFixedDesc;
+            document.getElementById("catFixedBtn").innerText = loc.catFixedBtn;
+            document.getElementById("catPackTitle").innerText = loc.catPackTitle;
+            document.getElementById("catPackDesc").innerText = loc.catPackDesc;
+            document.getElementById("catPackBtn").innerText = loc.catPackBtn;
+            document.getElementById("advantageTitle").innerText = loc.advantageTitle;
+            document.getElementById("advantageSub").innerText = loc.advantageSub;
+            document.getElementById("adv1Title").innerText = loc.adv1Title;
+            document.getElementById("adv1Desc").innerText = loc.adv1Desc;
+            document.getElementById("adv2Title").innerText = loc.adv2Title;
+            document.getElementById("adv2Desc").innerText = loc.adv2Desc;
+            document.getElementById("adv3Title").innerText = loc.adv3Title;
+            document.getElementById("adv3Desc").innerText = loc.adv3Desc;
+            document.getElementById("adv4Title").innerText = loc.adv4Title;
+            document.getElementById("adv4Desc").innerText = loc.adv4Desc;
+            document.getElementById("certTitle").innerText = loc.certTitle;
+            document.getElementById("contactTitle").innerText = loc.contactTitle;
+            document.getElementById("contactPhone").innerText = loc.contactPhone;
+            document.getElementById("contactEmail").innerText = loc.contactEmail;
+            document.getElementById("contactAddress").innerText = loc.contactAddress;
+            document.getElementById("contactMobile").innerText = loc.contactMobile;
+            document.getElementById("formTitle").innerHTML = `<i class="fas fa-paper-plane"></i> ${loc.formTitle}`;
+            document.getElementById("submitBtnText").innerText = loc.submitBtnText;
+        }
+
+        if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+            DesertPower.onLanguageChange((lang) => {
+                updateHomeUI(lang);
+            });
+            updateHomeUI(DesertPower.getCurrentLang());
+        } else {
+            window.addEventListener('load', () => {
+                if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+                    DesertPower.onLanguageChange((lang) => updateHomeUI(lang));
+                    updateHomeUI(DesertPower.getCurrentLang());
+                } else {
+                    console.warn("DesertPower not loaded, using default language");
+                    updateHomeUI('zh');
+                }
+            });
+        }
+
+        // 表单提交
+        const form = document.getElementById('quickContact');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmailInput').value.trim();
+                const msg = document.getElementById('contactMsg').value.trim();
+                const statusDiv = document.getElementById('formStatus');
+                const getLang = () => (typeof DesertPower !== 'undefined' && DesertPower.getCurrentLang) ? DesertPower.getCurrentLang() : 'zh';
+                const currentLang = getLang();
+                const loc = homeLocales[currentLang] || homeLocales.zh;
+                if (!name || !email) {
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg || "请填写完整信息";
+                    return;
+                }
+                const btn = document.getElementById('submitBtn');
+                const originalText = document.getElementById('submitBtnText').innerText;
+                try {
+                    btn.disabled = true;
+                    document.getElementById('submitBtnText').innerText = loc.sending || "发送中...";
+                    if (typeof DesertPower !== 'undefined' && DesertPower.emailjs) {
+                        await emailjs.send(DesertPower.emailjs.serviceId, DesertPower.emailjs.templateId, {
+                            from_name: name, from_email: email, message: msg, product: "Homepage Inquiry"
+                        });
+                    } else {
+                        await emailjs.send("service_c8wh567", "template_jh5s1nt", {
+                            from_name: name, from_email: email, message: msg, product: "Homepage Inquiry"
+                        });
+                    }
+                    statusDiv.style.color = "#1a4a3a";
+                    statusDiv.innerText = loc.successMsg || "感谢咨询，我们会尽快联系您！";
+                    form.reset();
+                } catch (err) {
+                    console.error(err);
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg || "发送失败，请稍后重试。";
+                } finally {
+                    btn.disabled = false;
+                    document.getElementById('submitBtnText').innerText = originalText;
+                    setTimeout(() => statusDiv.innerText = "", 5000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
