@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>超大型移动电源车 | Liayang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/components.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 id="heroTitle">超大型移动电源车<br>研发旗舰 · 兆瓦级输出</h1>
+                <p id="heroDesc">3344kWh / 3762kWh / 5016kWh 极限容量 | 液冷温控 | 全氟己酮+水消防 | 1C高倍率放电 | 可上公告/特殊运输 | 引领未来能源。</p>
+                <div class="cert-badge">
+                    <i class="fas fa-flask"></i> <span id="cert1">前沿研发项目</span> &nbsp;|&nbsp;
+                    <i class="fas fa-charging-station"></i> <span id="cert2">1C 高倍率</span> &nbsp;|&nbsp;
+                    <i class="fas fa-globe-asia"></i> <span id="cert3">兆瓦级输出</span>
+                </div>
+            </div>
+            <div class="hero-icon">
+                <i class="fas fa-dragon"></i>
+                <i class="fas fa-bolt"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="gallery-section">
+            <div class="title-decoration">
+                <i class="fas fa-images"></i>
+                <h2 class="section-title" id="galleryTitle">产品实景与应用</h2>
+                <p id="gallerySub">极限容量，兆瓦级功率，面向未来能源场景</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/ultra-1.jpg" alt="超大型电源车" loading="lazy"><div class="gallery-caption" id="caption1">整车外观 · 旗舰研发</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/ultra-2.jpg" alt="现场供电"><div class="gallery-caption" id="caption2">超大型矿区/船舶供电</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/ultra-3.jpg" alt="高倍率放电" loading="lazy"><div class="gallery-caption" id="caption3">1C高倍率放电 · 极致性能</div></div>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <div class="title-decoration">
+                <i class="fas fa-charging-station"></i>
+                <h2 class="section-title" id="tableTitle">技术规格对比</h2>
+                <p id="tableSub">1000kW 系列 / 5000kW 系列，研发项目参数</p>
+            </div>
+            <!-- 表格滚动提示 -->
+            <div class="table-scroll-hint">
+                <i class="fas fa-arrows-alt-h"></i> <span id="scrollHint">左右滑动查看完整参数</span>
+            </div>
+            <div class="table-wrapper">
+                <table class="spec-table" id="specTable">
+                    <thead id="tableHeader"></thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+            <div class="certificate-row">
+                <div class="cert-card"><i class="fas fa-temperature-high"></i> <span id="feature1">宽温 -20℃~+50℃</span></div>
+                <div class="cert-card"><i class="fas fa-fire-extinguisher"></i> <span id="feature2">PACK+舱级+水消防</span></div>
+                <div class="cert-card"><i class="fas fa-tachometer-alt"></i> <span id="feature3">1C 高倍率放电</span></div>
+                <div class="cert-card"><i class="fas fa-road"></i> <span id="feature4">多轴挂车/部分可上高速</span></div>
+                <div class="cert-card"><i class="fas fa-plug"></i> <span id="feature5">交直流输出</span></div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt"></i> <span id="contactTitle">联系我们</span></h3>
+                    <div class="contact-detail"><i class="fas fa-phone"></i> <span id="contactPhone">0371-55919895</span></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> <span id="contactEmail">beecor@outlook.com</span></div>
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span id="contactAddress">中国 河南郑州市大学南路246号</span></div>
+                    <div class="contact-detail"><i class="fas fa-mobile-alt"></i> <span id="contactMobile">13383710735</span></div>
+                </div>
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> <span id="formTitle">快速咨询</span></h3>
+                    <form id="quickContact">
+                        <input type="text" id="contactName" placeholder="您的姓名" required>
+                        <input type="email" id="contactEmailInput" placeholder="电子邮箱" required>
+                        <textarea rows="2" id="contactMsg" placeholder="留言 (产品型号、需求等)"></textarea>
+                        <button type="submit" id="submitBtn"><span id="submitBtnText">发送咨询</span> <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <div id="formStatus" style="margin-top:0.8rem;font-size:0.8rem;text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // 产品数据（超大型电源车：两个系列）
+        const productDataA = {
+            name: "1000kW 系列 (3344/3762kWh)",
+            batteryCap: "3344 / 3762 kWh",
+            dimension: "9675×2438×2591 mm",
+            weight: "40t / 43t",
+            corrosion: "C4", ip: "IP54", temp: "-20℃ ~ +50℃", humidity: "0~95% RH",
+            fire: "PACK级+舱级气体消防(全氟己酮)+水消防",
+            cooling: "液冷", cycleLife: "8000 次", efficiency: ">85%",
+            chargeMode: "直流充电 + 并网交流充电",
+            dischargeMode: "并网交流放电 + 离网交流放电",
+            chargeTime: "3.0h (3344kWh) / 3.3h (3762kWh)",
+            charger: "否 (不配置充电桩)",
+            chassis: "3轴牵引 + 2轴挂车",
+            roadLegal: "可上公告",
+            cellType: "磷酸铁锂 314Ah",
+            grouping: "1P52S * 4 * 17",
+            dcVoltage: "582.4-748.8V",
+            dischargeRate: "0.5C",
+            acPower: "1000 kW",
+            acVoltage: "400V",
+            acCurrent: "1444 A",
+            otherVoltage: "—"
+        };
+        const productDataB = {
+            name: "5000kW 系列 (5016kWh)",
+            batteryCap: "5016 kWh",
+            dimension: "12000×2438×2591 mm",
+            weight: ">50t",
+            corrosion: "C4", ip: "IP54", temp: "-20℃ ~ +50℃", humidity: "0~95% RH",
+            fire: "PACK级+舱级气体消防(全氟己酮)+水消防",
+            cooling: "液冷", cycleLife: "3500 次", efficiency: ">85%",
+            chargeMode: "并网交流充电",
+            dischargeMode: "并网交流放电 + 离网交流放电",
+            chargeTime: "1h",
+            charger: "否",
+            chassis: "3轴牵引 + 3轴挂车",
+            roadLegal: "不能上高速公路",
+            cellType: "磷酸铁锂 314Ah",
+            grouping: "1P52S * 8 * 12",
+            dcVoltage: "1164.8-1497.6V",
+            dischargeRate: "1C",
+            acPower: "5000 kW",
+            acVoltage: "35kV / 10kV",
+            acCurrent: "82.48A / 288.68A",
+            otherVoltage: "—"
+        };
+
+        const paramKeys = [
+            "paramBatteryCap","paramDimension","paramWeight","paramCorrosion","paramIP","paramTemp","paramHumidity",
+            "paramFire","paramCooling","paramCycleLife","paramEfficiency","paramChargeMode","paramDischargeMode",
+            "paramChargeTime","paramCharger","paramChassis","paramRoadLegal","paramCellType","paramGrouping",
+            "paramDCVoltage","paramDischargeRate","paramACPower","paramACVoltage","paramACCurrent","paramOtherVoltage"
+        ];
+
+        // 页面专属多语言资源
+        const pageLocales = {
+            en: {
+                heroTitle: "Ultra-large Mobile Power Station<br>R&D Flagship · Megawatt Output",
+                heroDesc: "3344kWh / 3762kWh / 5016kWh ultimate capacity | Liquid cooling | Perfluorohexanone + water fire | 1C high-rate discharge | Road legal (partial) | Leading future energy.",
+                cert1: "Advanced R&D", cert2: "1C High Rate", cert3: "Megawatt Output",
+                galleryTitle: "Product Gallery", gallerySub: "Ultimate capacity, megawatt power for future energy scenarios",
+                caption1: "Flagship R&D Design", caption2: "Ultra-large Mining/Ship Power", caption3: "1C High-rate Discharge",
+                tableTitle: "Technical Specs Comparison", tableSub: "1000kW Series / 5000kW Series (R&D)",
+                feature1: "Wide temp -20℃~+50℃", feature2: "PACK+Compartment+Water Fire", feature3: "1C High-rate Discharge",
+                feature4: "Multi-axle trailer / Partial highway access", feature5: "AC+DC Output",
+                contactTitle: "Contact Us", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "No.246, Daxue South Rd, Zhengzhou, China", contactMobile: "13383710735",
+                formTitle: "Quick Inquiry", submitBtnText: "Send", sending: "Sending...",
+                successMsg: "Thank you! We'll contact you soon.", errorMsg: "Failed. Please try again.",
+                scrollHint: "Swipe left/right to view full specs",
+                paramBatteryCap: "Battery Capacity", paramDimension: "Dimension (L*W*H)", paramWeight: "Weight",
+                paramCorrosion: "Corrosion Grade", paramIP: "IP Rating", paramTemp: "Operating Temp.",
+                paramHumidity: "Humidity", paramFire: "Fire Suppression", paramCooling: "Cooling",
+                paramCycleLife: "Cycle Life", paramEfficiency: "Efficiency", paramChargeMode: "Charging Mode",
+                paramDischargeMode: "Discharge Mode", paramChargeTime: "Charging Duration", paramCharger: "Charger",
+                paramChassis: "Chassis", paramRoadLegal: "Road Legal", paramCellType: "Cell Type",
+                paramGrouping: "Grouping", paramDCVoltage: "DC Voltage", paramDischargeRate: "Discharge Rate",
+                paramACPower: "AC Output Power", paramACVoltage: "AC Voltage", paramACCurrent: "AC Current",
+                paramOtherVoltage: "Other Output"
+            },
+            zh: {
+                heroTitle: "超大型移动电源车<br>研发旗舰 · 兆瓦级输出",
+                heroDesc: "3344kWh / 3762kWh / 5016kWh 极限容量 | 液冷温控 | 全氟己酮+水消防 | 1C高倍率放电 | 可上公告/特殊运输 | 引领未来能源。",
+                cert1: "前沿研发项目", cert2: "1C 高倍率", cert3: "兆瓦级输出",
+                galleryTitle: "产品实景与应用", gallerySub: "极限容量，兆瓦级功率，面向未来能源场景",
+                caption1: "整车外观 · 旗舰研发", caption2: "超大型矿区/船舶供电", caption3: "1C高倍率放电 · 极致性能",
+                tableTitle: "技术规格对比", tableSub: "1000kW 系列 / 5000kW 系列 (研发项目)",
+                feature1: "宽温 -20℃~+50℃", feature2: "PACK+舱级+水消防", feature3: "1C 高倍率放电",
+                feature4: "多轴挂车/部分可上高速", feature5: "交直流输出",
+                contactTitle: "联系我们", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "中国 河南郑州市大学南路246号", contactMobile: "13383710735",
+                formTitle: "快速咨询", submitBtnText: "发送咨询", sending: "发送中...",
+                successMsg: "感谢咨询，我们会尽快联系您！", errorMsg: "发送失败，请稍后重试。",
+                scrollHint: "左右滑动查看完整参数",
+                paramBatteryCap: "电池容量", paramDimension: "整柜尺寸(长*宽*高)", paramWeight: "整柜重量",
+                paramCorrosion: "防腐等级", paramIP: "防护等级", paramTemp: "工作温度", paramHumidity: "工作湿度",
+                paramFire: "消防配置", paramCooling: "温控方式", paramCycleLife: "循环寿命", paramEfficiency: "系统效率",
+                paramChargeMode: "充电方式", paramDischargeMode: "放电方式", paramChargeTime: "充电时长",
+                paramCharger: "充电桩配置", paramChassis: "适配底盘", paramRoadLegal: "是否可以上路",
+                paramCellType: "电芯类型", paramGrouping: "成组方式", paramDCVoltage: "直流电压范围",
+                paramDischargeRate: "放电倍率", paramACPower: "额定输出功率", paramACVoltage: "输出电压",
+                paramACCurrent: "最大输出电流", paramOtherVoltage: "其他输出电压"
+            },
+            ar: {
+                heroTitle: "محطة طاقة فائقة الضخامة<br>مشروع بحثي رائد · خرج ميجاواط",
+                heroDesc: "سعة قصوى 3344/3762/5016 كيلوواط/ساعة | تبريد سائل | إطفاء حريق بغاز perfluorohexanone + ماء | تفريغ عالي المعدل 1C | قانوني للطرق (جزئيًا) | قيادة طاقة المستقبل.",
+                cert1: "بحث وتطوير متقدم", cert2: "معدل عالي 1C", cert3: "خرج ميجاواط",
+                galleryTitle: "معرض المنتج", gallerySub: "سعة قصوى، طاقة ميجاواط لسيناريوهات الطاقة المستقبلية",
+                caption1: "تصميم رائد", caption2: "طاقة للمناجم/السفن فائقة الضخامة", caption3: "تفريغ عالي المعدل 1C",
+                tableTitle: "مقارنة المواصفات", tableSub: "سلسلة 1000kW / سلسلة 5000kW (مشروع بحثي)",
+                feature1: "درجة حرارة -20℃~+50℃", feature2: "إطفاء حريق متكامل", feature3: "تفريغ عالي المعدل 1C",
+                feature4: "هيكل متعدد المحاور / وصول جزئي للطرق السريعة", feature5: "خرج AC+DC",
+                contactTitle: "اتصل بنا", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "رقم 246، طريق داشوي الجنوبي، تشنغتشو، خنان، الصين", contactMobile: "13383710735",
+                formTitle: "استفسار سريع", submitBtnText: "إرسال", sending: "جاري الإرسال...",
+                successMsg: "شكراً، سنتصل بك قريباً.", errorMsg: "فشل الإرسال. حاول مرة أخرى.",
+                scrollHint: "اسحب يمينًا/يسارًا لعرض المواصفات الكاملة",
+                paramBatteryCap: "سعة البطارية", paramDimension: "أبعاد الحاوية", paramWeight: "الوزن",
+                paramCorrosion: "مقاومة التآكل", paramIP: "درجة الحماية", paramTemp: "درجة حرارة التشغيل",
+                paramHumidity: "الرطوبة", paramFire: "نظام الإطفاء", paramCooling: "التبريد",
+                paramCycleLife: "عمر الدورة", paramEfficiency: "الكفاءة", paramChargeMode: "وضع الشحن",
+                paramDischargeMode: "وضع التفريغ", paramChargeTime: "مدة الشحن", paramCharger: "الشاحن",
+                paramChassis: "الهيكل", paramRoadLegal: "صلاحية الطريق", paramCellType: "نوع الخلية",
+                paramGrouping: "تجميع الخلايا", paramDCVoltage: "جهد التيار المستمر", paramDischargeRate: "معدل التفريغ",
+                paramACPower: "الطاقة المقدرة", paramACVoltage: "جهد الخرج", paramACCurrent: "التيار",
+                paramOtherVoltage: "جهد آخر"
+            }
+        };
+
+        // 渲染表格（两列产品对比）
+        function renderTable(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            const thead = document.getElementById("tableHeader");
+            const tbody = document.getElementById("tableBody");
+            thead.innerHTML = `<tr class="product-header"><th>${lang === 'ar' ? 'المعامل' : (lang === 'zh' ? '参数' : 'Parameter')}</th><th>${productDataA.name}</th><th>${productDataB.name}</th></table>`;
+            
+            const valueMapA = {
+                paramBatteryCap: productDataA.batteryCap, paramDimension: productDataA.dimension, paramWeight: productDataA.weight,
+                paramCorrosion: productDataA.corrosion, paramIP: productDataA.ip, paramTemp: productDataA.temp,
+                paramHumidity: productDataA.humidity, paramFire: productDataA.fire, paramCooling: productDataA.cooling,
+                paramCycleLife: productDataA.cycleLife, paramEfficiency: productDataA.efficiency, paramChargeMode: productDataA.chargeMode,
+                paramDischargeMode: productDataA.dischargeMode, paramChargeTime: productDataA.chargeTime, paramCharger: productDataA.charger,
+                paramChassis: productDataA.chassis, paramRoadLegal: productDataA.roadLegal, paramCellType: productDataA.cellType,
+                paramGrouping: productDataA.grouping, paramDCVoltage: productDataA.dcVoltage, paramDischargeRate: productDataA.dischargeRate,
+                paramACPower: productDataA.acPower, paramACVoltage: productDataA.acVoltage, paramACCurrent: productDataA.acCurrent,
+                paramOtherVoltage: productDataA.otherVoltage
+            };
+            const valueMapB = {
+                paramBatteryCap: productDataB.batteryCap, paramDimension: productDataB.dimension, paramWeight: productDataB.weight,
+                paramCorrosion: productDataB.corrosion, paramIP: productDataB.ip, paramTemp: productDataB.temp,
+                paramHumidity: productDataB.humidity, paramFire: productDataB.fire, paramCooling: productDataB.cooling,
+                paramCycleLife: productDataB.cycleLife, paramEfficiency: productDataB.efficiency, paramChargeMode: productDataB.chargeMode,
+                paramDischargeMode: productDataB.dischargeMode, paramChargeTime: productDataB.chargeTime, paramCharger: productDataB.charger,
+                paramChassis: productDataB.chassis, paramRoadLegal: productDataB.roadLegal, paramCellType: productDataB.cellType,
+                paramGrouping: productDataB.grouping, paramDCVoltage: productDataB.dcVoltage, paramDischargeRate: productDataB.dischargeRate,
+                paramACPower: productDataB.acPower, paramACVoltage: productDataB.acVoltage, paramACCurrent: productDataB.acCurrent,
+                paramOtherVoltage: productDataB.otherVoltage
+            };
+            
+            let html = "";
+            for (let key of paramKeys) {
+                let label = loc[key];
+                let valA = valueMapA[key] || "—";
+                let valB = valueMapB[key] || "—";
+                html += `<tr><td class="param-label">${label}${valA === "—" && valB === "—" ? " " : ""}</td><td>${valA}</td><td>${valB}</td></tr>`;
+            }
+            // 添加额外认证行
+            const certText = lang === 'en' ? "🔬 R&D Project — Megawatt-class, 1C rate, extreme scalability" : 
+                             (lang === 'zh' ? "🔬 研发项目 — 兆瓦级功率、1C倍率、极限扩展性" : 
+                             "🔬 مشروع بحث وتطوير — فئة ميجاواط، معدل 1C، قابلية توسع قصوى");
+            html += `<tr style="background:#faf3e6;"><td class="param-label">${lang === 'ar' ? 'ملاحظات البحث' : (lang === 'zh' ? '研发备注' : 'R&D Notes')}</td><td colspan="2" style="color:#b87333; font-weight:500;">${certText}</td></tr>`;
+            tbody.innerHTML = html;
+        }
+
+        // 更新页面UI
+        function updatePageUI(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            document.getElementById("heroTitle").innerHTML = loc.heroTitle;
+            document.getElementById("heroDesc").innerText = loc.heroDesc;
+            document.getElementById("cert1").innerText = loc.cert1;
+            document.getElementById("cert2").innerText = loc.cert2;
+            document.getElementById("cert3").innerText = loc.cert3;
+            document.getElementById("galleryTitle").innerText = loc.galleryTitle;
+            document.getElementById("gallerySub").innerText = loc.gallerySub;
+            document.getElementById("caption1").innerText = loc.caption1;
+            document.getElementById("caption2").innerText = loc.caption2;
+            document.getElementById("caption3").innerText = loc.caption3;
+            document.getElementById("tableTitle").innerText = loc.tableTitle;
+            document.getElementById("tableSub").innerText = loc.tableSub;
+            document.getElementById("scrollHint").innerText = loc.scrollHint;
+            document.getElementById("feature1").innerText = loc.feature1;
+            document.getElementById("feature2").innerText = loc.feature2;
+            document.getElementById("feature3").innerText = loc.feature3;
+            document.getElementById("feature4").innerText = loc.feature4;
+            document.getElementById("feature5").innerText = loc.feature5;
+            document.getElementById("contactTitle").innerText = loc.contactTitle;
+            document.getElementById("contactPhone").innerText = loc.contactPhone;
+            document.getElementById("contactEmail").innerText = loc.contactEmail;
+            document.getElementById("contactAddress").innerText = loc.contactAddress;
+            document.getElementById("contactMobile").innerText = loc.contactMobile;
+            document.getElementById("formTitle").innerHTML = `<i class="fas fa-paper-plane"></i> ${loc.formTitle}`;
+            document.getElementById("submitBtnText").innerText = loc.submitBtnText;
+            renderTable(lang);
+        }
+
+        // 注册语言切换回调
+        if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+            DesertPower.onLanguageChange((lang) => {
+                updatePageUI(lang);
+            });
+            updatePageUI(DesertPower.getCurrentLang());
+        } else {
+            window.addEventListener('load', () => {
+                if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+                    DesertPower.onLanguageChange((lang) => updatePageUI(lang));
+                    updatePageUI(DesertPower.getCurrentLang());
+                } else {
+                    console.warn("DesertPower not loaded, using default language");
+                    updatePageUI('zh');
+                }
+            });
+        }
+
+        // 表单提交
+        const form = document.getElementById('quickContact');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmailInput').value.trim();
+                const msg = document.getElementById('contactMsg').value.trim();
+                const statusDiv = document.getElementById('formStatus');
+                const getLang = () => (typeof DesertPower !== 'undefined' && DesertPower.getCurrentLang) ? DesertPower.getCurrentLang() : 'zh';
+                const currentLang = getLang();
+                const loc = pageLocales[currentLang] || pageLocales.zh;
+                if (!name || !email) {
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                    return;
+                }
+                const btn = document.getElementById('submitBtn');
+                const originalText = document.getElementById('submitBtnText').innerText;
+                try {
+                    btn.disabled = true;
+                    document.getElementById('submitBtnText').innerText = loc.sending;
+                    if (typeof DesertPower !== 'undefined' && DesertPower.emailjs) {
+                        await emailjs.send(DesertPower.emailjs.serviceId, DesertPower.emailjs.templateId, {
+                            from_name: name, from_email: email, message: msg, product: "Ultra-large Power Station (R&D)"
+                        });
+                    } else {
+                        await emailjs.send("service_c8wh567", "template_jh5s1nt", {
+                            from_name: name, from_email: email, message: msg, product: "Ultra-large Power Station (R&D)"
+                        });
+                    }
+                    statusDiv.style.color = "#1a4a3a";
+                    statusDiv.innerText = loc.successMsg;
+                    form.reset();
+                } catch (err) {
+                    console.error(err);
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                } finally {
+                    btn.disabled = false;
+                    document.getElementById('submitBtnText').innerText = originalText;
+                    setTimeout(() => statusDiv.innerText = "", 5000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

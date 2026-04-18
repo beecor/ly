@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>PACK系列 - 储能PACK 280Ah | Liayang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/components.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 id="heroTitle">PACK系列 · 储能PACK<br>280Ah 长循环寿命</h1>
+                <p id="heroDesc">14.336kWh标准电量 | 磷酸铁锂 | 1P165组串 | 8000次循环 | 适用于储能柜。</p>
+                <div class="cert-badge">
+                    <i class="fas fa-battery-full"></i> <span id="cert1">280Ah大容量</span> &nbsp;|&nbsp;
+                    <i class="fas fa-sync-alt"></i> <span id="cert2">8000次循环</span> &nbsp;|&nbsp;
+                    <i class="fas fa-tachometer-alt"></i> <span id="cert3">140A标准充放</span>
+                </div>
+            </div>
+            <div class="hero-icon">
+                <i class="fas fa-microchip"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="gallery-section">
+            <div class="title-decoration">
+                <i class="fas fa-images"></i>
+                <h2 class="section-title" id="galleryTitle">产品实景与应用</h2>
+                <p id="gallerySub">高可靠性PACK，适用于工商业储能柜</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/pack-280-14kwh.jpg" alt="PACK外观" loading="lazy"><div class="gallery-caption" id="caption1">PACK外观 · 紧凑设计</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/pack-280-2.jpg" alt="PACK内部"><div class="gallery-caption" id="caption2">电芯成组 · 1P165</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/pack-280-14kwh3.jpg" alt="应用场景" loading="lazy"><div class="gallery-caption" id="caption3">储能柜集成</div></div>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <div class="title-decoration">
+                <i class="fas fa-charging-station"></i>
+                <h2 class="section-title" id="tableTitle">技术规格</h2>
+                <p id="tableSub">储能PACK 280Ah，专为储能系统设计</p>
+            </div>
+            <!-- 表格滚动提示 -->
+            <div class="table-scroll-hint">
+                <i class="fas fa-arrows-alt-h"></i> <span id="scrollHint">左右滑动查看完整参数</span>
+            </div>
+            <div class="table-wrapper">
+                <table class="spec-table" id="specTable">
+                    <thead id="tableHeader"></thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+            <div class="certificate-row">
+                <div class="cert-card"><i class="fas fa-battery-full"></i> <span id="feature1">容量280Ah / 14.336kWh</span></div>
+                <div class="cert-card"><i class="fas fa-sync-alt"></i> <span id="feature2">8000次长循环</span></div>
+                <div class="cert-card"><i class="fas fa-tachometer-alt"></i> <span id="feature3">140A标准充放</span></div>
+                <div class="cert-card"><i class="fas fa-weight-hanging"></i> <span id="feature4">整包质量≤115kg</span></div>
+                <div class="cert-card"><i class="fas fa-cube"></i> <span id="feature5">1P165组串方式</span></div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt"></i> <span id="contactTitle">联系我们</span></h3>
+                    <div class="contact-detail"><i class="fas fa-phone"></i> <span id="contactPhone">0371-55919895</span></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> <span id="contactEmail">beecor@outlook.com</span></div>
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span id="contactAddress">中国 河南郑州市大学南路246号</span></div>
+                    <div class="contact-detail"><i class="fas fa-mobile-alt"></i> <span id="contactMobile">13383710735</span></div>
+                </div>
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> <span id="formTitle">快速咨询</span></h3>
+                    <form id="quickContact">
+                        <input type="text" id="contactName" placeholder="您的姓名" required>
+                        <input type="email" id="contactEmailInput" placeholder="电子邮箱" required>
+                        <textarea rows="2" id="contactMsg" placeholder="留言 (产品型号、需求等)"></textarea>
+                        <button type="submit" id="submitBtn"><span id="submitBtnText">发送咨询</span> <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <div id="formStatus" style="margin-top:0.8rem;font-size:0.8rem;text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // 产品数据（单产品）
+        const productData = {
+            model: "PCN2301",
+            cellType: "磷酸铁锂",
+            nominalCapacity: "280 Ah",
+            groupingMethod: "1P165",
+            standardEnergy: "14.336 kWh",
+            standardVoltage: "51.2 V",
+            cycleLife: "8000 次",
+            weight: "110 ± 5 kg",
+            standardChargeDischargeCurrent: "140 A",
+            dimension: "721.2×433×252 mm",
+            application: "储能柜"
+        };
+
+        const paramKeys = [
+            "paramModel", "paramCellType", "paramNominalCapacity", "paramGroupingMethod",
+            "paramStandardEnergy", "paramStandardVoltage", "paramCycleLife", "paramWeight",
+            "paramStandardChargeDischargeCurrent", "paramDimension", "paramApplication"
+        ];
+
+        // 页面专属多语言资源
+        const pageLocales = {
+            en: {
+                heroTitle: "PACK Series · Energy Storage PACK<br>280Ah Long Cycle Life",
+                heroDesc: "14.336kWh standard energy | LFP | 1P165 grouping | 8000 cycles | Suitable for storage cabinets.",
+                cert1: "280Ah Capacity", cert2: "8000 Cycles", cert3: "140A Std Current",
+                galleryTitle: "Product Gallery", gallerySub: "High-reliability PACK for C&I storage cabinets",
+                caption1: "Compact Design", caption2: "Cell Grouping · 1P165", caption3: "Integrated in Storage Cabinet",
+                tableTitle: "Technical Specifications", tableSub: "Energy Storage PACK 280Ah for ESS",
+                feature1: "Capacity 280Ah / 14.336kWh", feature2: "8000 Cycles", feature3: "140A Std Charge/Discharge",
+                feature4: "Weight ≤115kg", feature5: "1P165 Grouping",
+                contactTitle: "Contact Us", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "No.246, Daxue South Rd, Zhengzhou, China", contactMobile: "13383710735",
+                formTitle: "Quick Inquiry", submitBtnText: "Send", sending: "Sending...",
+                successMsg: "Thank you! We'll contact you soon.", errorMsg: "Failed. Please try again.",
+                scrollHint: "Swipe left/right to view full specs",
+                paramModel: "Product Model", paramCellType: "Battery Type", paramNominalCapacity: "Nominal Capacity",
+                paramGroupingMethod: "String Configuration", paramStandardEnergy: "Standard Energy", paramStandardVoltage: "Standard Voltage",
+                paramCycleLife: "Cycle Life", paramWeight: "Weight", paramStandardChargeDischargeCurrent: "Standard Charge/Discharge Current",
+                paramDimension: "Dimension (W×D×H)", paramApplication: "Application"
+            },
+            zh: {
+                heroTitle: "PACK系列 · 储能PACK<br>280Ah 长循环寿命",
+                heroDesc: "14.336kWh标准电量 | 磷酸铁锂 | 1P165组串 | 8000次循环 | 适用于储能柜。",
+                cert1: "280Ah大容量", cert2: "8000次循环", cert3: "140A标准充放",
+                galleryTitle: "产品实景与应用", gallerySub: "高可靠性PACK，适用于工商业储能柜",
+                caption1: "PACK外观 · 紧凑设计", caption2: "电芯成组 · 1P165", caption3: "储能柜集成",
+                tableTitle: "技术规格", tableSub: "储能PACK 280Ah，专为储能系统设计",
+                feature1: "容量280Ah / 14.336kWh", feature2: "8000次长循环", feature3: "140A标准充放",
+                feature4: "整包质量≤115kg", feature5: "1P165组串方式",
+                contactTitle: "联系我们", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "中国 河南郑州市大学南路246号", contactMobile: "13383710735",
+                formTitle: "快速咨询", submitBtnText: "发送咨询", sending: "发送中...",
+                successMsg: "感谢咨询，我们会尽快联系您！", errorMsg: "发送失败，请稍后重试。",
+                scrollHint: "左右滑动查看完整参数",
+                paramModel: "产品型号", paramCellType: "电池类型", paramNominalCapacity: "标称容量",
+                paramGroupingMethod: "组串方式", paramStandardEnergy: "标准电量", paramStandardVoltage: "标准电压",
+                paramCycleLife: "循环次数", paramWeight: "整包质量", paramStandardChargeDischargeCurrent: "标准充放电电流",
+                paramDimension: "外形尺寸(宽×深×高)", paramApplication: "适用范围"
+            },
+            ar: {
+                heroTitle: "سلسلة PACK · حزمة تخزين الطاقة<br>280Ah عمر دورة طويل",
+                heroDesc: "طاقة قياسية 14.336kWh | LFP | تجميع 1P165 | 8000 دورة | مناسب لخزائن التخزين.",
+                cert1: "سعة 280Ah", cert2: "8000 دورة", cert3: "تيار قياسي 140A",
+                galleryTitle: "معرض المنتج", gallerySub: "حزمة عالية الموثوقية لخزائن التخزين التجارية والصناعية",
+                caption1: "تصميم مضغوط", caption2: "تجميع الخلايا · 1P165", caption3: "مدمج في خزانة تخزين",
+                tableTitle: "المواصفات الفنية", tableSub: "حزمة تخزين الطاقة 280Ah لأنظمة ESS",
+                feature1: "سعة 280Ah / 14.336kWh", feature2: "8000 دورة", feature3: "تيار شحن/تفريغ قياسي 140A",
+                feature4: "وزن الحزمة ≤115kg", feature5: "تجميع 1P165",
+                contactTitle: "اتصل بنا", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "رقم 246، طريق داشوي الجنوبي، تشنغتشو، خنان، الصين", contactMobile: "13383710735",
+                formTitle: "استفسار سريع", submitBtnText: "إرسال", sending: "جاري الإرسال...",
+                successMsg: "شكراً، سنتصل بك قريباً.", errorMsg: "فشل الإرسال. حاول مرة أخرى.",
+                scrollHint: "اسحب يمينًا/يسارًا لعرض المواصفات الكاملة",
+                paramModel: "طراز المنتج", paramCellType: "نوع البطارية", paramNominalCapacity: "السعة الاسمية",
+                paramGroupingMethod: "تكوين السلسلة", paramStandardEnergy: "الطاقة القياسية", paramStandardVoltage: "الجهد القياسي",
+                paramCycleLife: "عمر الدورة", paramWeight: "وزن الحزمة", paramStandardChargeDischargeCurrent: "تيار الشحن/التفريغ القياسي",
+                paramDimension: "الأبعاد (عرض×عمق×ارتفاع)", paramApplication: "مجال الاستخدام"
+            }
+        };
+
+        // 渲染表格（单列）
+        function renderTable(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            const thead = document.getElementById("tableHeader");
+            const tbody = document.getElementById("tableBody");
+            thead.innerHTML = `<tr class="product-header"><th>${lang === 'ar' ? 'المعامل' : (lang === 'zh' ? '参数' : 'Parameter')}</th><th>${lang === 'ar' ? 'حزمة تخزين 280Ah' : (lang === 'zh' ? '储能PACK 280Ah' : 'Storage PACK 280Ah')}</th></tr>`;
+            
+            const valueMap = {
+                paramModel: productData.model, paramCellType: productData.cellType, paramNominalCapacity: productData.nominalCapacity,
+                paramGroupingMethod: productData.groupingMethod, paramStandardEnergy: productData.standardEnergy,
+                paramStandardVoltage: productData.standardVoltage, paramCycleLife: productData.cycleLife,
+                paramWeight: productData.weight, paramStandardChargeDischargeCurrent: productData.standardChargeDischargeCurrent,
+                paramDimension: productData.dimension, paramApplication: productData.application
+            };
+            
+            let html = "";
+            for (let key of paramKeys) {
+                let label = loc[key];
+                let val = valueMap[key] || "—";
+                html += `<tr><td class="param-label">${label}${val === "—" ? " " : ""}</td><td>${val}</td></tr>`;
+            }
+            // 添加综合优势行
+            const advantageText = lang === 'en' ? "✔️ High-reliability LFP cells | 8000 cycles long life | 1P165 configuration for flexible system integration | Consistent cell temperature | Suitable for C&I storage cabinets" : 
+                                 (lang === 'zh' ? "✔️ 高可靠性磷酸铁锂电芯 | 8000次长循环寿命 | 1P165成组便于系统集成 | 电芯温差一致性优异 | 适用于工商业储能柜" : 
+                                 "✔️ خلايا LFP عالية الموثوقية | 8000 دورة عمر طويل | تكوين 1P165 لسهولة التكامل | تناسق ممتاز لدرجة حرارة الخلايا | مناسب لخزائن التخزين التجارية والصناعية");
+            html += `<tr style="background:#faf3e6;"><td class="param-label">${lang === 'ar' ? 'المزايا الشاملة' : (lang === 'zh' ? '综合优势' : 'Comprehensive Advantages')}</td><td style="color:#b87333; font-weight:500;">${advantageText}</td></tr>`;
+            tbody.innerHTML = html;
+        }
+
+        // 更新页面UI
+        function updatePageUI(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            document.getElementById("heroTitle").innerHTML = loc.heroTitle;
+            document.getElementById("heroDesc").innerText = loc.heroDesc;
+            document.getElementById("cert1").innerText = loc.cert1;
+            document.getElementById("cert2").innerText = loc.cert2;
+            document.getElementById("cert3").innerText = loc.cert3;
+            document.getElementById("galleryTitle").innerText = loc.galleryTitle;
+            document.getElementById("gallerySub").innerText = loc.gallerySub;
+            document.getElementById("caption1").innerText = loc.caption1;
+            document.getElementById("caption2").innerText = loc.caption2;
+            document.getElementById("caption3").innerText = loc.caption3;
+            document.getElementById("tableTitle").innerText = loc.tableTitle;
+            document.getElementById("tableSub").innerText = loc.tableSub;
+            document.getElementById("scrollHint").innerText = loc.scrollHint;
+            document.getElementById("feature1").innerText = loc.feature1;
+            document.getElementById("feature2").innerText = loc.feature2;
+            document.getElementById("feature3").innerText = loc.feature3;
+            document.getElementById("feature4").innerText = loc.feature4;
+            document.getElementById("feature5").innerText = loc.feature5;
+            document.getElementById("contactTitle").innerText = loc.contactTitle;
+            document.getElementById("contactPhone").innerText = loc.contactPhone;
+            document.getElementById("contactEmail").innerText = loc.contactEmail;
+            document.getElementById("contactAddress").innerText = loc.contactAddress;
+            document.getElementById("contactMobile").innerText = loc.contactMobile;
+            document.getElementById("formTitle").innerHTML = `<i class="fas fa-paper-plane"></i> ${loc.formTitle}`;
+            document.getElementById("submitBtnText").innerText = loc.submitBtnText;
+            renderTable(lang);
+        }
+
+        // 注册语言切换回调
+        if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+            DesertPower.onLanguageChange((lang) => {
+                updatePageUI(lang);
+            });
+            updatePageUI(DesertPower.getCurrentLang());
+        } else {
+            window.addEventListener('load', () => {
+                if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+                    DesertPower.onLanguageChange((lang) => updatePageUI(lang));
+                    updatePageUI(DesertPower.getCurrentLang());
+                } else {
+                    console.warn("DesertPower not loaded, using default language");
+                    updatePageUI('zh');
+                }
+            });
+        }
+
+        // 表单提交
+        const form = document.getElementById('quickContact');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmailInput').value.trim();
+                const msg = document.getElementById('contactMsg').value.trim();
+                const statusDiv = document.getElementById('formStatus');
+                const getLang = () => (typeof DesertPower !== 'undefined' && DesertPower.getCurrentLang) ? DesertPower.getCurrentLang() : 'zh';
+                const currentLang = getLang();
+                const loc = pageLocales[currentLang] || pageLocales.zh;
+                if (!name || !email) {
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                    return;
+                }
+                const btn = document.getElementById('submitBtn');
+                const originalText = document.getElementById('submitBtnText').innerText;
+                try {
+                    btn.disabled = true;
+                    document.getElementById('submitBtnText').innerText = loc.sending;
+                    if (typeof DesertPower !== 'undefined' && DesertPower.emailjs) {
+                        await emailjs.send(DesertPower.emailjs.serviceId, DesertPower.emailjs.templateId, {
+                            from_name: name, from_email: email, message: msg, product: "Storage PACK 280Ah"
+                        });
+                    } else {
+                        await emailjs.send("service_c8wh567", "template_jh5s1nt", {
+                            from_name: name, from_email: email, message: msg, product: "Storage PACK 280Ah"
+                        });
+                    }
+                    statusDiv.style.color = "#1a4a3a";
+                    statusDiv.innerText = loc.successMsg;
+                    form.reset();
+                } catch (err) {
+                    console.error(err);
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                } finally {
+                    btn.disabled = false;
+                    document.getElementById('submitBtnText').innerText = originalText;
+                    setTimeout(() => statusDiv.innerText = "", 5000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

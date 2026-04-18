@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>PACK系列 - 工程机械快充动力PACK 206Ah | Liayang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/components.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 id="heroTitle">PACK系列 · 工程机械快充动力PACK<br>206Ah 高倍率快充</h1>
+                <p id="heroDesc">31.6kWh标准电量 | 磷酸铁锂 | 1P48S组串 | 3000次快充循环 | 适用于工程机械、重卡。</p>
+                <div class="cert-badge">
+                    <i class="fas fa-battery-full"></i> <span id="cert1">206Ah大容量</span> &nbsp;|&nbsp;
+                    <i class="fas fa-sync-alt"></i> <span id="cert2">3000次快充循环</span> &nbsp;|&nbsp;
+                    <i class="fas fa-tachometer-alt"></i> <span id="cert3">410A大电流充电</span>
+                </div>
+            </div>
+            <div class="hero-icon">
+                <i class="fas fa-microchip"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="gallery-section">
+            <div class="title-decoration">
+                <i class="fas fa-images"></i>
+                <h2 class="section-title" id="galleryTitle">产品实景与应用</h2>
+                <p id="gallerySub">高倍率快充PACK，专为工程机械及重卡设计</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/pack-206-1.jpg" alt="PACK外观" loading="lazy"><div class="gallery-caption" id="caption1">PACK外观 · 快充设计</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/pack-206-2.jpg" alt="PACK内部"><div class="gallery-caption" id="caption2">电芯成组 · 1P48S</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/pack-206-3.jpg" alt="应用场景" loading="lazy"><div class="gallery-caption" id="caption3">工程机械/重卡集成</div></div>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <div class="title-decoration">
+                <i class="fas fa-charging-station"></i>
+                <h2 class="section-title" id="tableTitle">技术规格</h2>
+                <p id="tableSub">工程机械快充动力PACK 206Ah，高倍率充放电</p>
+            </div>
+            <!-- 表格滚动提示 -->
+            <div class="table-scroll-hint">
+                <i class="fas fa-arrows-alt-h"></i> <span id="scrollHint">左右滑动查看完整参数</span>
+            </div>
+            <div class="table-wrapper">
+                <table class="spec-table" id="specTable">
+                    <thead id="tableHeader"></thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+            <div class="certificate-row">
+                <div class="cert-card"><i class="fas fa-battery-full"></i> <span id="feature1">容量206Ah / 31.6kWh</span></div>
+                <div class="cert-card"><i class="fas fa-sync-alt"></i> <span id="feature2">3000次快充循环</span></div>
+                <div class="cert-card"><i class="fas fa-tachometer-alt"></i> <span id="feature3">410A充电/206A放电</span></div>
+                <div class="cert-card"><i class="fas fa-weight-hanging"></i> <span id="feature4">整包质量≤250kg</span></div>
+                <div class="cert-card"><i class="fas fa-cube"></i> <span id="feature5">1P48S组串方式</span></div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt"></i> <span id="contactTitle">联系我们</span></h3>
+                    <div class="contact-detail"><i class="fas fa-phone"></i> <span id="contactPhone">0371-55919895</span></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> <span id="contactEmail">beecor@outlook.com</span></div>
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span id="contactAddress">中国 河南郑州市大学南路246号</span></div>
+                    <div class="contact-detail"><i class="fas fa-mobile-alt"></i> <span id="contactMobile">13383710735</span></div>
+                </div>
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> <span id="formTitle">快速咨询</span></h3>
+                    <form id="quickContact">
+                        <input type="text" id="contactName" placeholder="您的姓名" required>
+                        <input type="email" id="contactEmailInput" placeholder="电子邮箱" required>
+                        <textarea rows="2" id="contactMsg" placeholder="留言 (产品型号、需求等)"></textarea>
+                        <button type="submit" id="submitBtn"><span id="submitBtnText">发送咨询</span> <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <div id="formStatus" style="margin-top:0.8rem;font-size:0.8rem;text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // 产品数据（单产品）
+        const productData = {
+            model: "PDL2501",
+            cellType: "磷酸铁锂",
+            nominalCapacity: "206 Ah",
+            groupingMethod: "1P48S",
+            standardEnergy: "31.6 kWh",
+            standardVoltage: "153.6 V",
+            cycleLife: "3000 次（快充）",
+            weight: "245 ± 5 kg",
+            standardChargeDischargeCurrent: "410A 充 / 206A 放",
+            dimension: "1060×630×240 mm",
+            application: "工程机械、重卡"
+        };
+
+        const paramKeys = [
+            "paramModel", "paramCellType", "paramNominalCapacity", "paramGroupingMethod",
+            "paramStandardEnergy", "paramStandardVoltage", "paramCycleLife", "paramWeight",
+            "paramStandardChargeDischargeCurrent", "paramDimension", "paramApplication"
+        ];
+
+        // 页面专属多语言资源
+        const pageLocales = {
+            en: {
+                heroTitle: "PACK Series · Fast-charge Power PACK for Construction Machinery<br>206Ah High-rate Fast Charge",
+                heroDesc: "31.6kWh standard energy | LFP | 1P48S grouping | 3000 fast-charge cycles | Suitable for construction machinery and heavy trucks.",
+                cert1: "206Ah Capacity", cert2: "3000 Fast-charge Cycles", cert3: "410A Charge Current",
+                galleryTitle: "Product Gallery", gallerySub: "High-rate fast-charge PACK designed for construction machinery and heavy trucks",
+                caption1: "PACK Exterior · Fast-charge", caption2: "Cell Grouping · 1P48S", caption3: "Integrated in Machinery/Trucks",
+                tableTitle: "Technical Specifications", tableSub: "Fast-charge PACK 206Ah for Construction Machinery",
+                feature1: "Capacity 206Ah / 31.6kWh", feature2: "3000 Fast-charge Cycles", feature3: "410A Charge / 206A Discharge",
+                feature4: "Weight ≤250kg", feature5: "1P48S Grouping",
+                contactTitle: "Contact Us", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "No.246, Daxue South Rd, Zhengzhou, China", contactMobile: "13383710735",
+                formTitle: "Quick Inquiry", submitBtnText: "Send", sending: "Sending...",
+                successMsg: "Thank you! We'll contact you soon.", errorMsg: "Failed. Please try again.",
+                scrollHint: "Swipe left/right to view full specs",
+                paramModel: "Product Model", paramCellType: "Battery Type", paramNominalCapacity: "Nominal Capacity",
+                paramGroupingMethod: "String Configuration", paramStandardEnergy: "Standard Energy", paramStandardVoltage: "Standard Voltage",
+                paramCycleLife: "Cycle Life", paramWeight: "Weight", paramStandardChargeDischargeCurrent: "Standard Charge/Discharge Current",
+                paramDimension: "Dimension (W×D×H)", paramApplication: "Application"
+            },
+            zh: {
+                heroTitle: "PACK系列 · 工程机械快充动力PACK<br>206Ah 高倍率快充",
+                heroDesc: "31.6kWh标准电量 | 磷酸铁锂 | 1P48S组串 | 3000次快充循环 | 适用于工程机械、重卡。",
+                cert1: "206Ah大容量", cert2: "3000次快充循环", cert3: "410A大电流充电",
+                galleryTitle: "产品实景与应用", gallerySub: "高倍率快充PACK，专为工程机械及重卡设计",
+                caption1: "PACK外观 · 快充设计", caption2: "电芯成组 · 1P48S", caption3: "工程机械/重卡集成",
+                tableTitle: "技术规格", tableSub: "工程机械快充动力PACK 206Ah，高倍率充放电",
+                feature1: "容量206Ah / 31.6kWh", feature2: "3000次快充循环", feature3: "410A充电/206A放电",
+                feature4: "整包质量≤250kg", feature5: "1P48S组串方式",
+                contactTitle: "联系我们", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "中国 河南郑州市大学南路246号", contactMobile: "13383710735",
+                formTitle: "快速咨询", submitBtnText: "发送咨询", sending: "发送中...",
+                successMsg: "感谢咨询，我们会尽快联系您！", errorMsg: "发送失败，请稍后重试。",
+                scrollHint: "左右滑动查看完整参数",
+                paramModel: "产品型号", paramCellType: "电池类型", paramNominalCapacity: "标称容量",
+                paramGroupingMethod: "组串方式", paramStandardEnergy: "标准电量", paramStandardVoltage: "标准电压",
+                paramCycleLife: "循环次数", paramWeight: "整包质量", paramStandardChargeDischargeCurrent: "标准充放电流",
+                paramDimension: "外形尺寸(宽×深×高)", paramApplication: "适用范围"
+            },
+            ar: {
+                heroTitle: "سلسلة PACK · حزمة طاقة سريعة الشحن للمعدات الهندسية<br>206Ah شحن سريع عالي المعدل",
+                heroDesc: "طاقة قياسية 31.6kWh | LFP | تجميع 1P48S | 3000 دورة شحن سريع | مناسب للمعدات الهندسية والشاحنات الثقيلة.",
+                cert1: "سعة 206Ah", cert2: "3000 دورة شحن سريع", cert3: "تيار شحن 410A",
+                galleryTitle: "معرض المنتج", gallerySub: "حزمة شحن سريع عالي المعدل مصممة للمعدات الهندسية والشاحنات الثقيلة",
+                caption1: "مظهر الحزمة · شحن سريع", caption2: "تجميع الخلايا · 1P48S", caption3: "مدمج في المعدات/الشاحنات",
+                tableTitle: "المواصفات الفنية", tableSub: "حزمة شحن سريع 206Ah للمعدات الهندسية",
+                feature1: "سعة 206Ah / 31.6kWh", feature2: "3000 دورة شحن سريع", feature3: "شحن 410A / تفريغ 206A",
+                feature4: "وزن الحزمة ≤250kg", feature5: "تجميع 1P48S",
+                contactTitle: "اتصل بنا", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "رقم 246، طريق داشوي الجنوبي، تشنغتشو، خنان، الصين", contactMobile: "13383710735",
+                formTitle: "استفسار سريع", submitBtnText: "إرسال", sending: "جاري الإرسال...",
+                successMsg: "شكراً، سنتصل بك قريباً.", errorMsg: "فشل الإرسال. حاول مرة أخرى.",
+                scrollHint: "اسحب يمينًا/يسارًا لعرض المواصفات الكاملة",
+                paramModel: "طراز المنتج", paramCellType: "نوع البطارية", paramNominalCapacity: "السعة الاسمية",
+                paramGroupingMethod: "تكوين السلسلة", paramStandardEnergy: "الطاقة القياسية", paramStandardVoltage: "الجهد القياسي",
+                paramCycleLife: "عمر الدورة", paramWeight: "وزن الحزمة", paramStandardChargeDischargeCurrent: "تيار الشحن/التفريغ القياسي",
+                paramDimension: "الأبعاد (عرض×عمق×ارتفاع)", paramApplication: "مجال الاستخدام"
+            }
+        };
+
+        // 渲染表格（单列）— 已确保无多余字符
+        function renderTable(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            const thead = document.getElementById("tableHeader");
+            const tbody = document.getElementById("tableBody");
+            thead.innerHTML = `<tr class="product-header"><th>${lang === 'ar' ? 'المعامل' : (lang === 'zh' ? '参数' : 'Parameter')}</th><th>${lang === 'ar' ? 'حزمة شحن سريع 206Ah' : (lang === 'zh' ? '工程机械快充动力PACK 206Ah' : 'Fast-charge PACK 206Ah')}</th></tr>`;
+            
+            const valueMap = {
+                paramModel: productData.model, paramCellType: productData.cellType, paramNominalCapacity: productData.nominalCapacity,
+                paramGroupingMethod: productData.groupingMethod, paramStandardEnergy: productData.standardEnergy,
+                paramStandardVoltage: productData.standardVoltage, paramCycleLife: productData.cycleLife,
+                paramWeight: productData.weight, paramStandardChargeDischargeCurrent: productData.standardChargeDischargeCurrent,
+                paramDimension: productData.dimension, paramApplication: productData.application
+            };
+            
+            let html = "";
+            for (let key of paramKeys) {
+                let label = loc[key];
+                let val = valueMap[key] || "—";
+                html += `<tr><td class="param-label">${label}${val === "—" ? " " : ""}</td><td>${val}</td></tr>`;
+            }
+            // 添加综合优势行
+            const advantageText = lang === 'en' ? "✔️ High-rate fast-charge LFP cells | 3000 fast-charge cycles | 410A high-current charging | 1P48S configuration for heavy-duty applications | Consistent cell temperature | Suitable for construction machinery & heavy trucks" : 
+                                 (lang === 'zh' ? "✔️ 高倍率快充磷酸铁锂电芯 | 3000次快充循环 | 410A大电流充电 | 1P48S成组适配重载应用 | 电芯温差一致性优异 | 适用于工程机械、重卡" : 
+                                 "✔️ خلايا LFP سريعة الشحن عالية المعدل | 3000 دورة شحن سريع | شحن تيار عالي 410A | تكوين 1P48S للتطبيقات الثقيلة | تناسق ممتاز لدرجة حرارة الخلايا | مناسب للمعدات الهندسية والشاحنات الثقيلة");
+            html += `<tr style="background:#faf3e6;"><td class="param-label">${lang === 'ar' ? 'المزايا الشاملة' : (lang === 'zh' ? '综合优势' : 'Comprehensive Advantages')}</td><td style="color:#b87333; font-weight:500;">${advantageText}</td></tr>`;
+            tbody.innerHTML = html;
+        }
+
+        // 更新页面UI
+        function updatePageUI(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            document.getElementById("heroTitle").innerHTML = loc.heroTitle;
+            document.getElementById("heroDesc").innerText = loc.heroDesc;
+            document.getElementById("cert1").innerText = loc.cert1;
+            document.getElementById("cert2").innerText = loc.cert2;
+            document.getElementById("cert3").innerText = loc.cert3;
+            document.getElementById("galleryTitle").innerText = loc.galleryTitle;
+            document.getElementById("gallerySub").innerText = loc.gallerySub;
+            document.getElementById("caption1").innerText = loc.caption1;
+            document.getElementById("caption2").innerText = loc.caption2;
+            document.getElementById("caption3").innerText = loc.caption3;
+            document.getElementById("tableTitle").innerText = loc.tableTitle;
+            document.getElementById("tableSub").innerText = loc.tableSub;
+            document.getElementById("scrollHint").innerText = loc.scrollHint;
+            document.getElementById("feature1").innerText = loc.feature1;
+            document.getElementById("feature2").innerText = loc.feature2;
+            document.getElementById("feature3").innerText = loc.feature3;
+            document.getElementById("feature4").innerText = loc.feature4;
+            document.getElementById("feature5").innerText = loc.feature5;
+            document.getElementById("contactTitle").innerText = loc.contactTitle;
+            document.getElementById("contactPhone").innerText = loc.contactPhone;
+            document.getElementById("contactEmail").innerText = loc.contactEmail;
+            document.getElementById("contactAddress").innerText = loc.contactAddress;
+            document.getElementById("contactMobile").innerText = loc.contactMobile;
+            document.getElementById("formTitle").innerHTML = `<i class="fas fa-paper-plane"></i> ${loc.formTitle}`;
+            document.getElementById("submitBtnText").innerText = loc.submitBtnText;
+            renderTable(lang);
+        }
+
+        // 注册语言切换回调
+        if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+            DesertPower.onLanguageChange((lang) => {
+                updatePageUI(lang);
+            });
+            updatePageUI(DesertPower.getCurrentLang());
+        } else {
+            window.addEventListener('load', () => {
+                if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+                    DesertPower.onLanguageChange((lang) => updatePageUI(lang));
+                    updatePageUI(DesertPower.getCurrentLang());
+                } else {
+                    console.warn("DesertPower not loaded, using default language");
+                    updatePageUI('zh');
+                }
+            });
+        }
+
+        // 表单提交
+        const form = document.getElementById('quickContact');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmailInput').value.trim();
+                const msg = document.getElementById('contactMsg').value.trim();
+                const statusDiv = document.getElementById('formStatus');
+                const getLang = () => (typeof DesertPower !== 'undefined' && DesertPower.getCurrentLang) ? DesertPower.getCurrentLang() : 'zh';
+                const currentLang = getLang();
+                const loc = pageLocales[currentLang] || pageLocales.zh;
+                if (!name || !email) {
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                    return;
+                }
+                const btn = document.getElementById('submitBtn');
+                const originalText = document.getElementById('submitBtnText').innerText;
+                try {
+                    btn.disabled = true;
+                    document.getElementById('submitBtnText').innerText = loc.sending;
+                    if (typeof DesertPower !== 'undefined' && DesertPower.emailjs) {
+                        await emailjs.send(DesertPower.emailjs.serviceId, DesertPower.emailjs.templateId, {
+                            from_name: name, from_email: email, message: msg, product: "Fast-charge PACK 206Ah"
+                        });
+                    } else {
+                        await emailjs.send("service_c8wh567", "template_jh5s1nt", {
+                            from_name: name, from_email: email, message: msg, product: "Fast-charge PACK 206Ah"
+                        });
+                    }
+                    statusDiv.style.color = "#1a4a3a";
+                    statusDiv.innerText = loc.successMsg;
+                    form.reset();
+                } catch (err) {
+                    console.error(err);
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                } finally {
+                    btn.disabled = false;
+                    document.getElementById('submitBtnText').innerText = originalText;
+                    setTimeout(() => statusDiv.innerText = "", 5000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

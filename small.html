@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>小型移动电源车 | Liayang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/components.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 id="heroTitle">小型移动电源车<br>灵活储能 · 快速部署</h1>
+                <p id="heroDesc">241kWh / 418kWh 灵活配置 | 液冷温控 | 交直流双输出 | CE/海运认证 | 适应-20℃~+50℃严苛环境</p>
+                <div class="cert-badge">
+                    <i class="fas fa-plug"></i> <span id="cert1">交直流输出</span> &nbsp;|&nbsp;
+                    <i class="fas fa-shield-alt"></i> <span id="cert2">IP54/C4防腐</span> &nbsp;|&nbsp;
+                    <i class="fas fa-ship"></i> <span id="cert3">CE/海运认证</span>
+                </div>
+            </div>
+            <div class="hero-icon">
+                <i class="fas fa-battery-full"></i>
+                <i class="fas fa-truck"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="gallery-section">
+            <div class="title-decoration">
+                <i class="fas fa-images"></i>
+                <h2 class="section-title" id="galleryTitle">产品实景与应用</h2>
+                <p id="gallerySub">紧凑设计，即插即用，适用于多种场景</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/418-2.jpg" alt="小型电源车" loading="lazy"><div class="gallery-caption" id="caption1">整车外观 · 紧凑灵活</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/418family.jpg" alt="现场供电"><div class="gallery-caption" id="caption2">野外露营/轻松供电</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/241-2.png" alt="液冷温控" loading="lazy"><div class="gallery-caption" id="caption3">液冷系统 · 高效散热</div></div>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <div class="title-decoration">
+                <i class="fas fa-charging-station"></i>
+                <h2 class="section-title" id="tableTitle">技术规格对比</h2>
+                <p id="tableSub">241kWh / 418kWh 两种配置，满足不同需求</p>
+            </div>
+            <!-- 表格滚动提示 -->
+            <div class="table-scroll-hint">
+                <i class="fas fa-arrows-alt-h"></i> <span id="scrollHint">左右滑动查看完整参数</span>
+            </div>
+            <div class="table-wrapper">
+                <table class="spec-table" id="specTable">
+                    <thead id="tableHeader"></thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+            <div class="certificate-row">
+                <div class="cert-card"><i class="fas fa-temperature-high"></i> <span id="feature1">宽温 -20℃~+50℃</span></div>
+                <div class="cert-card"><i class="fas fa-fire-extinguisher"></i> <span id="feature2">PACK级气体消防</span></div>
+                <div class="cert-card"><i class="fas fa-tachometer-alt"></i> <span id="feature3">0.5C 充放电</span></div>
+                <div class="cert-card"><i class="fas fa-road"></i> <span id="feature4">拖挂式底盘/可上公告</span></div>
+                <div class="cert-card"><i class="fas fa-plug"></i> <span id="feature5">交直流双输出</span></div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt"></i> <span id="contactTitle">联系我们</span></h3>
+                    <div class="contact-detail"><i class="fas fa-phone"></i> <span id="contactPhone">0371-55919895</span></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> <span id="contactEmail">beecor@outlook.com</span></div>
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span id="contactAddress">中国 河南郑州市大学南路246号</span></div>
+                    <div class="contact-detail"><i class="fas fa-mobile-alt"></i> <span id="contactMobile">13383710735</span></div>
+                </div>
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> <span id="formTitle">快速咨询</span></h3>
+                    <form id="quickContact">
+                        <input type="text" id="contactName" placeholder="您的姓名" required>
+                        <input type="email" id="contactEmailInput" placeholder="电子邮箱" required>
+                        <textarea rows="2" id="contactMsg" placeholder="留言 (产品型号、需求等)"></textarea>
+                        <button type="submit" id="submitBtn"><span id="submitBtnText">发送咨询</span> <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <div id="formStatus" style="margin-top:0.8rem;font-size:0.8rem;text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // 产品数据（小型电源车）
+        const productData = {
+            batteryCap: "241 kWh / 418 kWh",
+            dimension: "2540×1400×1000 mm / 2640×1500×1960 mm",
+            weight: "2.6T / 4.5T",
+            corrosion: "C4", ip: "IP54", temp: "-20℃ ~ +50℃", humidity: "0~95% RH",
+            fire: "PACK级气体消防", cooling: "液冷", cycleLife: "8000 次", efficiency: ">85%",
+            chargeMode: "直流补电+交流补电 (241) / 直流充电+并网交流充电 (418)",
+            dischargeMode: "交流放电+直流放电 (241) / 并网+离网+直流放电 (418)",
+            chargeTime: "直流2h/交流8h (241) ; 直流2.5h/交流3.3h (418)",
+            charger: "120kW / 160kW", chassis: "拖挂式底盘", roadLegal: "需上公告",
+            cellType: "磷酸铁锂 314Ah", grouping: "1P48S*5 / 1P52S*4*2",
+            dcVoltage: "DC 672-852V / 582.4-748.8V", dischargeRate: "0.5C",
+            acPower: "30 kW / 125 kW", acVoltage: "AC 400V", acCurrent: "32 A / 180 A", otherVoltage: "220V"
+        };
+
+        const paramKeys = [
+            "paramBatteryCap","paramDimension","paramWeight","paramCorrosion","paramIP","paramTemp","paramHumidity",
+            "paramFire","paramCooling","paramCycleLife","paramEfficiency","paramChargeMode","paramDischargeMode",
+            "paramChargeTime","paramCharger","paramChassis","paramRoadLegal","paramCellType","paramGrouping",
+            "paramDCVoltage","paramDischargeRate","paramACPower","paramACVoltage","paramACCurrent","paramOtherVoltage"
+        ];
+
+        // 页面专属多语言资源
+        const pageLocales = {
+            en: {
+                heroTitle: "Small Mobile Power Station<br>Flexible Energy · Rapid Deployment",
+                heroDesc: "241kWh / 418kWh flexible | Liquid cooling | AC+DC output | CE/Marine certified | -20℃~+50℃",
+                cert1: "AC+DC Output", cert2: "IP54/C4", cert3: "CE/Marine",
+                galleryTitle: "Product Gallery", gallerySub: "Compact, plug-and-play",
+                caption1: "Compact & Flexible", caption2: "Field/Emergency", caption3: "Liquid Cooling",
+                tableTitle: "Technical Specs", tableSub: "241kWh / 418kWh options",
+                feature1: "Wide temp", feature2: "PACK Gas Fire", feature3: "0.5C Rate", feature4: "Trailer / Road Legal", feature5: "AC+DC Output",
+                contactTitle: "Contact Us", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "No.246, Daxue South Rd, Zhengzhou, China", contactMobile: "13383710735",
+                formTitle: "Quick Inquiry", submitBtnText: "Send", sending: "Sending...",
+                successMsg: "Thank you! We'll contact you soon.", errorMsg: "Failed. Please try again.",
+                scrollHint: "Swipe left/right to view full specs",
+                paramBatteryCap: "Battery Capacity", paramDimension: "Dimension (L*W*H)", paramWeight: "Weight",
+                paramCorrosion: "Corrosion Grade", paramIP: "IP Rating", paramTemp: "Operating Temp.",
+                paramHumidity: "Humidity", paramFire: "Fire Suppression", paramCooling: "Cooling",
+                paramCycleLife: "Cycle Life", paramEfficiency: "Efficiency", paramChargeMode: "Charging Mode",
+                paramDischargeMode: "Discharge Mode", paramChargeTime: "Charging Duration", paramCharger: "Charger",
+                paramChassis: "Chassis", paramRoadLegal: "Road Legal", paramCellType: "Cell Type",
+                paramGrouping: "Grouping", paramDCVoltage: "DC Voltage", paramDischargeRate: "Discharge Rate",
+                paramACPower: "AC Output Power", paramACVoltage: "AC Voltage", paramACCurrent: "AC Current",
+                paramOtherVoltage: "Other Output"
+            },
+            zh: {
+                heroTitle: "小型移动电源车<br>灵活储能 · 快速部署",
+                heroDesc: "241kWh / 418kWh 灵活配置 | 液冷温控 | 交直流双输出 | CE/海运认证 | 适应-20℃~+50℃严苛环境",
+                cert1: "交直流输出", cert2: "IP54/C4防腐", cert3: "CE/海运认证",
+                galleryTitle: "产品实景与应用", gallerySub: "紧凑设计，即插即用",
+                caption1: "整车外观 · 紧凑灵活", caption2: "野外作业/应急供电", caption3: "液冷系统 · 高效散热",
+                tableTitle: "技术规格对比", tableSub: "241kWh / 418kWh 两种配置",
+                feature1: "宽温 -20℃~+50℃", feature2: "PACK级气体消防", feature3: "0.5C 充放电",
+                feature4: "拖挂式底盘/可上公告", feature5: "交直流双输出",
+                contactTitle: "联系我们", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "中国 河南郑州市大学南路246号", contactMobile: "13383710735",
+                formTitle: "快速咨询", submitBtnText: "发送咨询", sending: "发送中...",
+                successMsg: "感谢咨询，我们会尽快联系您！", errorMsg: "发送失败，请稍后重试。",
+                scrollHint: "左右滑动查看完整参数",
+                paramBatteryCap: "电池容量", paramDimension: "整柜尺寸(长*宽*高)", paramWeight: "整柜重量",
+                paramCorrosion: "防腐等级", paramIP: "防护等级", paramTemp: "工作温度", paramHumidity: "工作湿度",
+                paramFire: "消防配置", paramCooling: "温控方式", paramCycleLife: "循环寿命", paramEfficiency: "系统效率",
+                paramChargeMode: "充电方式", paramDischargeMode: "放电方式", paramChargeTime: "充电时长",
+                paramCharger: "充电桩配置", paramChassis: "适配底盘", paramRoadLegal: "是否可以上路",
+                paramCellType: "电芯类型", paramGrouping: "成组方式", paramDCVoltage: "直流电压范围",
+                paramDischargeRate: "放电倍率", paramACPower: "额定输出功率", paramACVoltage: "输出电压",
+                paramACCurrent: "最大输出电流", paramOtherVoltage: "其他输出电压"
+            },
+            ar: {
+                heroTitle: "محطة طاقة صغيرة متنقلة<br>طاقة مرنة · نشر سريع",
+                heroDesc: "سعة 241/418 كيلوواط/ساعة | تبريد سائل | خرج AC+DC | شهادة CE وبحرية | يعمل من -20℃~+50℃",
+                cert1: "خرج AC+DC", cert2: "IP54/C4", cert3: "CE/بحرية",
+                galleryTitle: "معرض المنتج", gallerySub: "تصميم مضغوط",
+                caption1: "مدمج ومرن", caption2: "طاقة ميدانية", caption3: "تبريد سائل",
+                tableTitle: "المواصفات", tableSub: "خيارات 241/418 كيلوواط/ساعة",
+                feature1: "درجة حرارة -20℃~+50℃", feature2: "إطفاء غاز PACK", feature3: "معدل 0.5C",
+                feature4: "هيكل مقطورة / قانوني", feature5: "خرج AC+DC",
+                contactTitle: "اتصل بنا", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "رقم 246، طريق داشوي الجنوبي، تشنغتشو، خنان، الصين", contactMobile: "13383710735",
+                formTitle: "استفسار سريع", submitBtnText: "إرسال", sending: "جاري الإرسال...",
+                successMsg: "شكراً، سنتصل بك قريباً.", errorMsg: "فشل الإرسال. حاول مرة أخرى.",
+                scrollHint: "اسحب يمينًا/يسارًا لعرض المواصفات الكاملة",
+                paramBatteryCap: "سعة البطارية", paramDimension: "أبعاد الحاوية", paramWeight: "الوزن",
+                paramCorrosion: "مقاومة التآكل", paramIP: "درجة الحماية", paramTemp: "درجة حرارة التشغيل",
+                paramHumidity: "الرطوبة", paramFire: "نظام الإطفاء", paramCooling: "التبريد",
+                paramCycleLife: "عمر الدورة", paramEfficiency: "الكفاءة", paramChargeMode: "وضع الشحن",
+                paramDischargeMode: "وضع التفريغ", paramChargeTime: "مدة الشحن", paramCharger: "الشاحن",
+                paramChassis: "الهيكل", paramRoadLegal: "صلاحية الطريق", paramCellType: "نوع الخلية",
+                paramGrouping: "تجميع الخلايا", paramDCVoltage: "جهد التيار المستمر", paramDischargeRate: "معدل التفريغ",
+                paramACPower: "الطاقة المقدرة", paramACVoltage: "جهد الخرج", paramACCurrent: "التيار",
+                paramOtherVoltage: "جهد آخر"
+            }
+        };
+
+        // 渲染表格
+        function renderTable(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            const thead = document.getElementById("tableHeader");
+            const tbody = document.getElementById("tableBody");
+            thead.innerHTML = `<tr class="product-header"><th>${lang === 'ar' ? 'المعامل' : (lang === 'zh' ? '参数' : 'Parameter')}</th><th>小型移动电源车</th></td>`;
+            const valueMap = {
+                paramBatteryCap: productData.batteryCap, paramDimension: productData.dimension, paramWeight: productData.weight,
+                paramCorrosion: productData.corrosion, paramIP: productData.ip, paramTemp: productData.temp,
+                paramHumidity: productData.humidity, paramFire: productData.fire, paramCooling: productData.cooling,
+                paramCycleLife: productData.cycleLife, paramEfficiency: productData.efficiency, paramChargeMode: productData.chargeMode,
+                paramDischargeMode: productData.dischargeMode, paramChargeTime: productData.chargeTime, paramCharger: productData.charger,
+                paramChassis: productData.chassis, paramRoadLegal: productData.roadLegal, paramCellType: productData.cellType,
+                paramGrouping: productData.grouping, paramDCVoltage: productData.dcVoltage, paramDischargeRate: productData.dischargeRate,
+                paramACPower: productData.acPower, paramACVoltage: productData.acVoltage, paramACCurrent: productData.acCurrent,
+                paramOtherVoltage: productData.otherVoltage
+            };
+            let html = "";
+            for (let key of paramKeys) {
+                let label = loc[key];
+                let val = valueMap[key] || "—";
+                html += `<tr><td class="param-label">${label}</td><td>${val}</td></tr>`;
+            }
+            tbody.innerHTML = html;
+        }
+
+        // 更新页面UI
+        function updatePageUI(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            document.getElementById("heroTitle").innerHTML = loc.heroTitle;
+            document.getElementById("heroDesc").innerText = loc.heroDesc;
+            document.getElementById("cert1").innerText = loc.cert1;
+            document.getElementById("cert2").innerText = loc.cert2;
+            document.getElementById("cert3").innerText = loc.cert3;
+            document.getElementById("galleryTitle").innerText = loc.galleryTitle;
+            document.getElementById("gallerySub").innerText = loc.gallerySub;
+            document.getElementById("caption1").innerText = loc.caption1;
+            document.getElementById("caption2").innerText = loc.caption2;
+            document.getElementById("caption3").innerText = loc.caption3;
+            document.getElementById("tableTitle").innerText = loc.tableTitle;
+            document.getElementById("tableSub").innerText = loc.tableSub;
+            document.getElementById("scrollHint").innerText = loc.scrollHint;
+            document.getElementById("feature1").innerText = loc.feature1;
+            document.getElementById("feature2").innerText = loc.feature2;
+            document.getElementById("feature3").innerText = loc.feature3;
+            document.getElementById("feature4").innerText = loc.feature4;
+            document.getElementById("feature5").innerText = loc.feature5;
+            document.getElementById("contactTitle").innerText = loc.contactTitle;
+            document.getElementById("contactPhone").innerText = loc.contactPhone;
+            document.getElementById("contactEmail").innerText = loc.contactEmail;
+            document.getElementById("contactAddress").innerText = loc.contactAddress;
+            document.getElementById("contactMobile").innerText = loc.contactMobile;
+            document.getElementById("formTitle").innerHTML = `<i class="fas fa-paper-plane"></i> ${loc.formTitle}`;
+            document.getElementById("submitBtnText").innerText = loc.submitBtnText;
+            renderTable(lang);
+        }
+
+        // 注册语言切换回调
+        if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+            DesertPower.onLanguageChange((lang) => {
+                updatePageUI(lang);
+            });
+            updatePageUI(DesertPower.getCurrentLang());
+        } else {
+            window.addEventListener('load', () => {
+                if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+                    DesertPower.onLanguageChange((lang) => updatePageUI(lang));
+                    updatePageUI(DesertPower.getCurrentLang());
+                } else {
+                    console.warn("DesertPower not loaded, using default language");
+                    updatePageUI('zh');
+                }
+            });
+        }
+
+        // 表单提交
+        const form = document.getElementById('quickContact');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmailInput').value.trim();
+                const msg = document.getElementById('contactMsg').value.trim();
+                const statusDiv = document.getElementById('formStatus');
+                const getLang = () => (typeof DesertPower !== 'undefined' && DesertPower.getCurrentLang) ? DesertPower.getCurrentLang() : 'zh';
+                const currentLang = getLang();
+                const loc = pageLocales[currentLang] || pageLocales.zh;
+                if (!name || !email) {
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                    return;
+                }
+                const btn = document.getElementById('submitBtn');
+                const originalText = document.getElementById('submitBtnText').innerText;
+                try {
+                    btn.disabled = true;
+                    document.getElementById('submitBtnText').innerText = loc.sending;
+                    if (typeof DesertPower !== 'undefined' && DesertPower.emailjs) {
+                        await emailjs.send(DesertPower.emailjs.serviceId, DesertPower.emailjs.templateId, {
+                            from_name: name, from_email: email, message: msg, product: "Small Power Station"
+                        });
+                    } else {
+                        await emailjs.send("service_c8wh567", "template_jh5s1nt", {
+                            from_name: name, from_email: email, message: msg, product: "Small Power Station"
+                        });
+                    }
+                    statusDiv.style.color = "#1a4a3a";
+                    statusDiv.innerText = loc.successMsg;
+                    form.reset();
+                } catch (err) {
+                    console.error(err);
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                } finally {
+                    btn.disabled = false;
+                    document.getElementById('submitBtnText').innerText = originalText;
+                    setTimeout(() => statusDiv.innerText = "", 5000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

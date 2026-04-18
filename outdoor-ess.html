@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>工商业储能 - 户外储能柜 | Liayang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/components.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 id="heroTitle">工商业储能 · 户外储能柜<br>安全 · 高效 · 长寿命 · 便捷 · 灵活</h1>
+                <p id="heroDesc">125kW / 261kWh 液冷户外柜 | PACK级精准消防+舱级消防+水消防 | 整柜能量转换率≥90% | 头部厂商超容量电芯 | 配电一体化设计 | 最高支持10台并联 | 低压侧接入即插即用。</p>
+                <div class="cert-badge">
+                    <i class="fas fa-shield-alt"></i> <span id="cert1">PACK级+舱级+水消防</span> &nbsp;|&nbsp;
+                    <i class="fas fa-chart-line"></i> <span id="cert2">转换率≥90%</span> &nbsp;|&nbsp;
+                    <i class="fas fa-battery-full"></i> <span id="cert3">电芯温差≤2℃</span>
+                </div>
+            </div>
+            <div class="hero-icon">
+                <i class="fas fa-box"></i>
+                <i class="fas fa-charging-station"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="gallery-section">
+            <div class="title-decoration">
+                <i class="fas fa-images"></i>
+                <h2 class="section-title" id="galleryTitle">产品实景与应用</h2>
+                <p id="gallerySub">一体化设计，极简安装，适用于工商业储能场景</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/outdoor-1.jpg" alt="户外储能柜" loading="lazy"><div class="gallery-caption" id="caption1">整柜外观 · 液冷户外柜</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/outdoor-2.jpg" alt="安装场景"><div class="gallery-caption" id="caption2">多机并联 · 无缝肩并肩布置</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/outdoor-3.jpg" alt="智能液冷" loading="lazy"><div class="gallery-caption" id="caption3">智能液冷温控 · 高效散热</div></div>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <div class="title-decoration">
+                <i class="fas fa-charging-station"></i>
+                <h2 class="section-title" id="tableTitle">技术规格</h2>
+                <p id="tableSub">125kW/261kWh 液冷户外柜，支持多机并联</p>
+            </div>
+            <!-- 表格滚动提示 -->
+            <div class="table-scroll-hint">
+                <i class="fas fa-arrows-alt-h"></i> <span id="scrollHint">左右滑动查看完整参数</span>
+            </div>
+            <div class="table-wrapper">
+                <table class="spec-table" id="specTable">
+                    <thead id="tableHeader"></thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+            <div class="certificate-row">
+                <div class="cert-card"><i class="fas fa-temperature-high"></i> <span id="feature1">宽温 -20℃~+50℃</span></div>
+                <div class="cert-card"><i class="fas fa-fire-extinguisher"></i> <span id="feature2">PACK+舱级+水消防+防爆阀</span></div>
+                <div class="cert-card"><i class="fas fa-tachometer-alt"></i> <span id="feature3">整柜效率≥90%</span></div>
+                <div class="cert-card"><i class="fas fa-plug"></i> <span id="feature4">配电一体化/极简安装</span></div>
+                <div class="cert-card"><i class="fas fa-charging-station"></i> <span id="feature5">充放电转换＜100ms</span></div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt"></i> <span id="contactTitle">联系我们</span></h3>
+                    <div class="contact-detail"><i class="fas fa-phone"></i> <span id="contactPhone">0371-55919895</span></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> <span id="contactEmail">beecor@outlook.com</span></div>
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span id="contactAddress">中国 河南郑州市大学南路246号</span></div>
+                    <div class="contact-detail"><i class="fas fa-mobile-alt"></i> <span id="contactMobile">13383710735</span></div>
+                </div>
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> <span id="formTitle">快速咨询</span></h3>
+                    <form id="quickContact">
+                        <input type="text" id="contactName" placeholder="您的姓名" required>
+                        <input type="email" id="contactEmailInput" placeholder="电子邮箱" required>
+                        <textarea rows="2" id="contactMsg" placeholder="留言 (产品型号、需求等)"></textarea>
+                        <button type="submit" id="submitBtn"><span id="submitBtnText">发送咨询</span> <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <div id="formStatus" style="margin-top:0.8rem;font-size:0.8rem;text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // 产品数据（单产品）
+        const productData = {
+            ratedPower: "125 kW",
+            batteryCapacity: "261 kWh",
+            dimension: "1000×1350×2380 mm",
+            weight: "约 2.8 t",
+            corrosion: "C3",
+            ip: "IP54",  // 根据常见标准，图中未明确但沿用类似产品
+            temp: "-20℃ ~ +50℃",
+            humidity: "0~95% RH",
+            overVoltageProtection: "DC Type I / AC Type II",
+            fireSystem: "PACK级精准消防 + 舱级消防（全氟己酮）+ 水消防",
+            overloadCapacity: "1.1 倍",
+            cooling: "智能液冷",
+            cellType: "磷酸铁锂 3.2V / 314Ah",
+            systemGrouping: "1P52S * 5",
+            batteryVoltage: "650.0Vdc ~ 936.0Vdc",
+            outputVoltage: "400Vac",
+            gridFreq: "50Hz",
+            switchTime: "< 100ms"
+        };
+
+        const paramKeys = [
+            "paramRatedPower", "paramBatteryCapacity", "paramDimension", "paramWeight",
+            "paramCorrosion", "paramIP", "paramTemp", "paramHumidity",
+            "paramOverVoltageProtection", "paramFireSystem", "paramOverloadCapacity",
+            "paramCooling", "paramCellType", "paramSystemGrouping", "paramBatteryVoltage",
+            "paramOutputVoltage", "paramGridFreq", "paramSwitchTime"
+        ];
+
+        // 页面专属多语言资源
+        const pageLocales = {
+            en: {
+                heroTitle: "Commercial & Industrial ESS · Outdoor Cabinet<br>Safe · Efficient · Long-life · Convenient · Flexible",
+                heroDesc: "125kW / 261kWh liquid-cooled outdoor cabinet | PACK-level precise fire + compartment fire + water fire | Overall cabinet energy conversion efficiency ≥90% | Top-tier manufacturer cells | Integrated power distribution design | Supports up to 10 units in parallel | Low-voltage side plug-and-play.",
+                cert1: "PACK+Compartment+Water Fire", cert2: "Efficiency ≥90%", cert3: "Cell temp diff ≤2℃",
+                galleryTitle: "Product Gallery", gallerySub: "Integrated design, easy installation for commercial energy storage",
+                caption1: "Liquid-cooled Outdoor Cabinet", caption2: "Parallel Connection · Side-by-side Arrangement", caption3: "Smart Liquid Cooling · Efficient Heat Dissipation",
+                tableTitle: "Technical Specifications", tableSub: "125kW/261kWh Liquid-cooled Outdoor Cabinet",
+                feature1: "Wide temp -20℃~+50℃", feature2: "PACK+Compartment+Water Fire + Explosion-proof valve", feature3: "Overall efficiency ≥90%",
+                feature4: "Integrated power distribution / Easy installation", feature5: "Charge/discharge switch <100ms",
+                contactTitle: "Contact Us", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "No.246, Daxue South Rd, Zhengzhou, China", contactMobile: "13383710735",
+                formTitle: "Quick Inquiry", submitBtnText: "Send", sending: "Sending...",
+                successMsg: "Thank you! We'll contact you soon.", errorMsg: "Failed. Please try again.",
+                scrollHint: "Swipe left/right to view full specs",
+                paramRatedPower: "Rated Power", paramBatteryCapacity: "Battery Capacity", paramDimension: "Cabinet Dim (W×D×H)",
+                paramWeight: "Weight", paramCorrosion: "Corrosion Grade", paramIP: "IP Rating (Battery Compartment)",
+                paramTemp: "Operating Temp.", paramHumidity: "Humidity", paramOverVoltageProtection: "Overvoltage Protection",
+                paramFireSystem: "Fire Suppression", paramOverloadCapacity: "Overload Capacity", paramCooling: "Cooling Method",
+                paramCellType: "Cell Type", paramSystemGrouping: "System Grouping", paramBatteryVoltage: "Battery Voltage Range",
+                paramOutputVoltage: "Output Voltage", paramGridFreq: "Grid Frequency", paramSwitchTime: "Charge/Discharge Switch Time"
+            },
+            zh: {
+                heroTitle: "工商业储能 · 户外储能柜<br>安全 · 高效 · 长寿命 · 便捷 · 灵活",
+                heroDesc: "125kW / 261kWh 液冷户外柜 | PACK级精准消防+舱级消防+水消防 | 整柜能量转换率≥90% | 头部厂商超容量电芯 | 配电一体化设计 | 最高支持10台并联 | 低压侧接入即插即用。",
+                cert1: "PACK级+舱级+水消防", cert2: "转换率≥90%", cert3: "电芯温差≤2℃",
+                galleryTitle: "产品实景与应用", gallerySub: "一体化设计，极简安装，适用于工商业储能场景",
+                caption1: "整柜外观 · 液冷户外柜", caption2: "多机并联 · 无缝肩并肩布置", caption3: "智能液冷温控 · 高效散热",
+                tableTitle: "技术规格", tableSub: "125kW/261kWh 液冷户外柜，支持多机并联",
+                feature1: "宽温 -20℃~+50℃", feature2: "PACK+舱级+水消防+防爆阀", feature3: "整柜效率≥90%",
+                feature4: "配电一体化/极简安装", feature5: "充放电转换＜100ms",
+                contactTitle: "联系我们", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "中国 河南郑州市大学南路246号", contactMobile: "13383710735",
+                formTitle: "快速咨询", submitBtnText: "发送咨询", sending: "发送中...",
+                successMsg: "感谢咨询，我们会尽快联系您！", errorMsg: "发送失败，请稍后重试。",
+                scrollHint: "左右滑动查看完整参数",
+                paramRatedPower: "额定功率", paramBatteryCapacity: "电池容量", paramDimension: "柜体尺寸(宽×深×高)",
+                paramWeight: "重量", paramCorrosion: "防腐等级", paramIP: "电池舱IP防护等级",
+                paramTemp: "工作温度", paramHumidity: "允许环境湿度", paramOverVoltageProtection: "过压保护",
+                paramFireSystem: "消防系统", paramOverloadCapacity: "过载能力", paramCooling: "冷却方式",
+                paramCellType: "电芯类型", paramSystemGrouping: "系统成组方式", paramBatteryVoltage: "电池电压范围",
+                paramOutputVoltage: "额定输出电压", paramGridFreq: "额定电网频率", paramSwitchTime: "充放电转换时间"
+            },
+            ar: {
+                heroTitle: "تخزين الطاقة التجاري والصناعي · خزانة خارجية<br>آمن · فعال · عمر طويل · مريح · مرن",
+                heroDesc: "125kW / 261kWh خزانة خارجية بتبريد سائل | إطفاء دقيق على مستوى PACK + مقصورة + ماء | كفاءة تحويل الطاقة ≥90% | خلايا فائقة السعة من شركات رائدة | تصميم توزيع طاقة متكامل | دعم حتى 10 وحدات متوازية | توصيل فوري على جانب الجهد المنخفض.",
+                cert1: "إطفاء PACK+مقصورة+ماء", cert2: "الكفاءة ≥90%", cert3: "فرق درجة حرارة الخلية ≤2℃",
+                galleryTitle: "معرض المنتج", gallerySub: "تصميم متكامل، تركيب بسيط للتخزين التجاري",
+                caption1: "خزانة خارجية بتبريد سائل", caption2: "اتصال متوازي · ترتيب جنبًا إلى جنب", caption3: "تبريد سائل ذكي · تبديد حرارة فعال",
+                tableTitle: "المواصفات الفنية", tableSub: "خزانة خارجية بتبريد سائل 125kW/261kWh",
+                feature1: "درجة حرارة -20℃~+50℃", feature2: "إطفاء PACK+مقصورة+ماء + صمام مانع للانفجار", feature3: "الكفاءة الكلية ≥90%",
+                feature4: "توزيع طاقة متكامل / تركيب بسيط", feature5: "تحويل الشحن/التفريغ <100ms",
+                contactTitle: "اتصل بنا", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "رقم 246، طريق داشوي الجنوبي، تشنغتشو، خنان، الصين", contactMobile: "13383710735",
+                formTitle: "استفسار سريع", submitBtnText: "إرسال", sending: "جاري الإرسال...",
+                successMsg: "شكراً، سنتصل بك قريباً.", errorMsg: "فشل الإرسال. حاول مرة أخرى.",
+                scrollHint: "اسحب يمينًا/يسارًا لعرض المواصفات الكاملة",
+                paramRatedPower: "الطاقة المقدرة", paramBatteryCapacity: "سعة البطارية", paramDimension: "أبعاد الخزانة (عرض×عمق×ارتفاع)",
+                paramWeight: "الوزن", paramCorrosion: "مقاومة التآكل", paramIP: "درجة حماية حجرة البطارية",
+                paramTemp: "درجة حرارة التشغيل", paramHumidity: "الرطوبة المسموحة", paramOverVoltageProtection: "حماية الجهد الزائد",
+                paramFireSystem: "نظام الإطفاء", paramOverloadCapacity: "سعة التحميل الزائد", paramCooling: "طريقة التبريد",
+                paramCellType: "نوع الخلية", paramSystemGrouping: "تجميع النظام", paramBatteryVoltage: "نطاق جهد البطارية",
+                paramOutputVoltage: "جهد الخرج المقدر", paramGridFreq: "تردد الشبكة المقدر", paramSwitchTime: "زمن تحويل الشحن/التفريغ"
+            }
+        };
+
+        // 渲染表格（单列）
+        function renderTable(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            const thead = document.getElementById("tableHeader");
+            const tbody = document.getElementById("tableBody");
+            thead.innerHTML = `<tr class="product-header"><th>${lang === 'ar' ? 'المعامل' : (lang === 'zh' ? '参数' : 'Parameter')}</th><th>${lang === 'ar' ? 'خزانة تخزين خارجية' : (lang === 'zh' ? '户外储能柜' : 'Outdoor ESS Cabinet')}</th>`;
+            
+            const valueMap = {
+                paramRatedPower: productData.ratedPower, paramBatteryCapacity: productData.batteryCapacity,
+                paramDimension: productData.dimension, paramWeight: productData.weight, paramCorrosion: productData.corrosion,
+                paramIP: productData.ip, paramTemp: productData.temp, paramHumidity: productData.humidity,
+                paramOverVoltageProtection: productData.overVoltageProtection, paramFireSystem: productData.fireSystem,
+                paramOverloadCapacity: productData.overloadCapacity, paramCooling: productData.cooling,
+                paramCellType: productData.cellType, paramSystemGrouping: productData.systemGrouping,
+                paramBatteryVoltage: productData.batteryVoltage, paramOutputVoltage: productData.outputVoltage,
+                paramGridFreq: productData.gridFreq, paramSwitchTime: productData.switchTime
+            };
+            
+            let html = "";
+            for (let key of paramKeys) {
+                let label = loc[key];
+                let val = valueMap[key] || "—";
+                html += `<tr><td class="param-label">${label}${val === "—" ? " " : ""}</td><td>${val}</td></tr>`;
+            }
+            // 添加综合优势行
+            const advantageText = lang === 'en' ? "✔️ PACK-level precise fire protection | Compartment fire + water fire | Battery compartment explosion-proof valve | Electronic dehumidifier | Overall cabinet warranty 12 years, service life 15 years | Supports up to 10 units in parallel | Low-voltage side plug-and-play" : 
+                                 (lang === 'zh' ? "✔️ PACK级精准消防 | 舱级消防+水消防 | 电池舱防爆阀 | 电子除湿器 | 整柜保用12年，可用15年 | 最高支持10台并联 | 低压侧接入即插即用" : 
+                                 "✔️ إطفاء دقيق على مستوى PACK | إطفاء مقصورة + ماء | صمام مانع للانفجار | مزيل رطوبة إلكتروني | ضمان الخزانة 12 سنة، عمر خدمة 15 سنة | دعم حتى 10 وحدات متوازية | توصيل فوري على جانب الجهد المنخفض");
+            html += `<tr style="background:#faf3e6;"><td class="param-label">${lang === 'ar' ? 'المزايا الشاملة' : (lang === 'zh' ? '综合优势' : 'Comprehensive Advantages')}</td><td style="color:#b87333; font-weight:500;">${advantageText}</td></tr>`;
+            tbody.innerHTML = html;
+        }
+
+        // 更新页面UI
+        function updatePageUI(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            document.getElementById("heroTitle").innerHTML = loc.heroTitle;
+            document.getElementById("heroDesc").innerText = loc.heroDesc;
+            document.getElementById("cert1").innerText = loc.cert1;
+            document.getElementById("cert2").innerText = loc.cert2;
+            document.getElementById("cert3").innerText = loc.cert3;
+            document.getElementById("galleryTitle").innerText = loc.galleryTitle;
+            document.getElementById("gallerySub").innerText = loc.gallerySub;
+            document.getElementById("caption1").innerText = loc.caption1;
+            document.getElementById("caption2").innerText = loc.caption2;
+            document.getElementById("caption3").innerText = loc.caption3;
+            document.getElementById("tableTitle").innerText = loc.tableTitle;
+            document.getElementById("tableSub").innerText = loc.tableSub;
+            document.getElementById("scrollHint").innerText = loc.scrollHint;
+            document.getElementById("feature1").innerText = loc.feature1;
+            document.getElementById("feature2").innerText = loc.feature2;
+            document.getElementById("feature3").innerText = loc.feature3;
+            document.getElementById("feature4").innerText = loc.feature4;
+            document.getElementById("feature5").innerText = loc.feature5;
+            document.getElementById("contactTitle").innerText = loc.contactTitle;
+            document.getElementById("contactPhone").innerText = loc.contactPhone;
+            document.getElementById("contactEmail").innerText = loc.contactEmail;
+            document.getElementById("contactAddress").innerText = loc.contactAddress;
+            document.getElementById("contactMobile").innerText = loc.contactMobile;
+            document.getElementById("formTitle").innerHTML = `<i class="fas fa-paper-plane"></i> ${loc.formTitle}`;
+            document.getElementById("submitBtnText").innerText = loc.submitBtnText;
+            renderTable(lang);
+        }
+
+        // 注册语言切换回调
+        if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+            DesertPower.onLanguageChange((lang) => {
+                updatePageUI(lang);
+            });
+            updatePageUI(DesertPower.getCurrentLang());
+        } else {
+            window.addEventListener('load', () => {
+                if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+                    DesertPower.onLanguageChange((lang) => updatePageUI(lang));
+                    updatePageUI(DesertPower.getCurrentLang());
+                } else {
+                    console.warn("DesertPower not loaded, using default language");
+                    updatePageUI('zh');
+                }
+            });
+        }
+
+        // 表单提交
+        const form = document.getElementById('quickContact');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmailInput').value.trim();
+                const msg = document.getElementById('contactMsg').value.trim();
+                const statusDiv = document.getElementById('formStatus');
+                const getLang = () => (typeof DesertPower !== 'undefined' && DesertPower.getCurrentLang) ? DesertPower.getCurrentLang() : 'zh';
+                const currentLang = getLang();
+                const loc = pageLocales[currentLang] || pageLocales.zh;
+                if (!name || !email) {
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                    return;
+                }
+                const btn = document.getElementById('submitBtn');
+                const originalText = document.getElementById('submitBtnText').innerText;
+                try {
+                    btn.disabled = true;
+                    document.getElementById('submitBtnText').innerText = loc.sending;
+                    if (typeof DesertPower !== 'undefined' && DesertPower.emailjs) {
+                        await emailjs.send(DesertPower.emailjs.serviceId, DesertPower.emailjs.templateId, {
+                            from_name: name, from_email: email, message: msg, product: "Outdoor ESS Cabinet"
+                        });
+                    } else {
+                        await emailjs.send("service_c8wh567", "template_jh5s1nt", {
+                            from_name: name, from_email: email, message: msg, product: "Outdoor ESS Cabinet"
+                        });
+                    }
+                    statusDiv.style.color = "#1a4a3a";
+                    statusDiv.innerText = loc.successMsg;
+                    form.reset();
+                } catch (err) {
+                    console.error(err);
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                } finally {
+                    btn.disabled = false;
+                    document.getElementById('submitBtnText').innerText = originalText;
+                    setTimeout(() => statusDiv.innerText = "", 5000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>产品定制 | 俩羊 · liayang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/components.js" defer></script>
+    <style>
+        /* 轮播图样式 (响应式) */
+        .custom-carousel {
+            margin: 2rem 0 2rem;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            flex: 0 0 100%;
+            position: relative;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+        .carousel-caption {
+            position: absolute;
+            bottom: 15%;
+            left: 10%;
+            background: rgba(26, 74, 58, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            color: white;
+            max-width: 60%;
+        }
+        .carousel-caption h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .carousel-caption p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .carousel-btn:hover {
+            background: var(--gold);
+            color: #1a4a3a;
+        }
+        .carousel-btn.prev { left: 20px; }
+        .carousel-btn.next { right: 20px; }
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            z-index: 10;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .dot.active {
+            background: var(--gold);
+            transform: scale(1.2);
+        }
+        /* 研发实力卡片 */
+        .rd-section {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #f0e2cf;
+        }
+        .rd-title {
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .rd-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .rd-item {
+            background: #fef8ef;
+            border-radius: 1.5rem;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .rd-item i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+        }
+        .rd-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--deep-green);
+        }
+        /* 表格样式复用已有 */
+        @media (max-width: 768px) {
+            .carousel-caption { bottom: 10%; left: 5%; padding: 0.5rem 1rem; max-width: 80%; }
+            .carousel-caption h3 { font-size: 1rem; }
+            .carousel-caption p { font-size: 0.7rem; }
+            .carousel-btn { width: 30px; height: 30px; font-size: 0.9rem; }
+            .rd-title { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero 区域（定制化） -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 id="heroTitle">储能产品定制服务<br>从需求到交付，全程专业支持</h1>
+                <p id="heroDesc">依托强大的研发实力和柔性生产线，为您提供从电芯选型、PACK设计、系统集成到EMS/BMS的一站式定制解决方案。适用于工商业、工程机械、户用等各类场景。</p>
+                <div class="cert-badge">
+                    <i class="fas fa-cogs"></i> <span id="cert1">全流程定制</span> &nbsp;|&nbsp;
+                    <i class="fas fa-flask"></i> <span id="cert2">自研实验室</span> &nbsp;|&nbsp;
+                    <i class="fas fa-charging-station"></i> <span id="cert3">柔性生产线</span>
+                </div>
+            </div>
+            <div class="hero-icon">
+                <i class="fas fa-microchip"></i>
+                <i class="fas fa-charging-station"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- 响应式轮播图位（3张） -->
+        <div class="custom-carousel">
+            <div class="carousel-container">
+                <div class="carousel-slides" id="carouselSlides">
+                    <div class="carousel-slide">
+                        <img src="https://img.liayang.com/zd/custom-1.jpg" alt="PACK实验室">
+                        <div class="carousel-caption">
+                            <h3 id="slide1Title">PACK实验室</h3>
+                            <p id="slide1Desc">电芯测试、模组设计、安全验证</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://img.liayang.com/zd/custom-2.jpg" alt="控制系统实验室" loading="lazy">
+                        <div class="carousel-caption">
+                            <h3 id="slide2Title">控制系统实验室</h3>
+                            <p id="slide2Desc">BMS/EMS研发，软件仿真与测试</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://img.liayang.com/zd/custom-3.jpg" alt="储能中试实验室" loading="lazy">
+                        <div class="carousel-caption">
+                            <h3 id="slide3Title">储能中试实验室</h3>
+                            <p id="slide3Desc">产品中试验证、可靠性测试</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </div>
+
+        <!-- 研发实力介绍（基于提供的文字） -->
+        <div class="rd-section">
+            <div class="rd-title">
+                <i class="fas fa-flask"></i>
+                <span id="rdTitle">科研条件与研发实力</span>
+            </div>
+            <p id="rdDesc">厂家设有储能PACK、软件、工程机械电动化技术部，拥有PACK实验室、控制系统实验室、储能中试实验室等研发场地和实验条件。团队持续投入创新，为客户提供安全、高效、高集成的定制化储能产品。</p>
+            <div class="rd-grid">
+                <div class="rd-item">
+                    <i class="fas fa-microchip"></i>
+                    <h4 id="rd1Title">储能PACK技术部</h4>
+                    <p id="rd1Desc">电芯选型、模组设计、热仿真、结构优化</p>
+                </div>
+                <div class="rd-item">
+                    <i class="fas fa-code"></i>
+                    <h4 id="rd2Title">软件研发部</h4>
+                    <p id="rd2Desc">BMS/EMS算法、云平台监控、APP开发</p>
+                </div>
+                <div class="rd-item">
+                    <i class="fas fa-tractor"></i>
+                    <h4 id="rd3Title">工程机械电动化部</h4>
+                    <p id="rd3Desc">重卡、挖机、矿车等特种车辆电动化方案</p>
+                </div>
+                <div class="rd-item">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h4 id="rd4Title">三大实验室</h4>
+                    <p id="rd4Desc">PACK实验室、控制系统实验室、储能中试实验室</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 定制服务流程表格（类似产品表格风格） -->
+        <div class="product-section">
+            <div class="title-decoration">
+                <i class="fas fa-charging-station"></i>
+                <h2 class="section-title" id="tableTitle">定制服务流程</h2>
+                <p id="tableSub">从需求沟通到批量交付，每一步都专业透明</p>
+            </div>
+            <div class="table-wrapper">
+                <table class="spec-table">
+                    <thead id="tableHeader"></thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+            <div class="certificate-row">
+                <div class="cert-card"><i class="fas fa-file-signature"></i> <span id="feature1">需求分析</span></div>
+                <div class="cert-card"><i class="fas fa-drafting-compass"></i> <span id="feature2">方案设计</span></div>
+                <div class="cert-card"><i class="fas fa-flask"></i> <span id="feature3">样机验证</span></div>
+                <div class="cert-card"><i class="fas fa-industry"></i> <span id="feature4">量产交付</span></div>
+                <div class="cert-card"><i class="fas fa-headset"></i> <span id="feature5">售后支持</span></div>
+            </div>
+        </div>
+
+        <!-- 联系区域（与产品页面一致） -->
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt"></i> <span id="contactTitle">联系我们</span></h3>
+                    <div class="contact-detail"><i class="fas fa-phone"></i> <span id="contactPhone">0371-55919895</span></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> <span id="contactEmail">beecor@outlook.com</span></div>
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span id="contactAddress">中国 河南郑州市大学南路246号</span></div>
+                    <div class="contact-detail"><i class="fas fa-mobile-alt"></i> <span id="contactMobile">13383710735</span></div>
+                </div>
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> <span id="formTitle">快速咨询</span></h3>
+                    <form id="quickContact">
+                        <input type="text" id="contactName" placeholder="您的姓名" required>
+                        <input type="email" id="contactEmailInput" placeholder="电子邮箱" required>
+                        <textarea rows="2" id="contactMsg" placeholder="留言 (定制需求、产品型号等)"></textarea>
+                        <button type="submit" id="submitBtn"><span id="submitBtnText">发送咨询</span> <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <div id="formStatus" style="margin-top:0.8rem;font-size:0.8rem;text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // ========== 轮播图逻辑（3张） ==========
+        const slides = document.querySelectorAll('.carousel-slide');
+        const slidesContainer = document.getElementById('carouselSlides');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('carouselDots');
+        let currentIndex = 0;
+        let autoInterval;
+        const totalSlides = slides.length; // 自动为3
+        let isTransitioning = false;
+
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, idx) => {
+                if (idx === currentIndex) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+        }
+        function goToSlide(index) {
+            if (isTransitioning) return;
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            currentIndex = index;
+            isTransitioning = true;
+            slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots();
+            setTimeout(() => { isTransitioning = false; }, 500);
+            resetAutoPlay();
+        }
+        function nextSlide() { goToSlide(currentIndex + 1); }
+        function prevSlide() { goToSlide(currentIndex - 1); }
+        function resetAutoPlay() {
+            if (autoInterval) clearInterval(autoInterval);
+            autoInterval = setInterval(() => { nextSlide(); }, 5000);
+        }
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        createDots();
+        resetAutoPlay();
+
+        // ========== 多语言配置（移除第四张轮播图相关字段） ==========
+        const pageLocales = {
+            en: {
+                heroTitle: "Custom Energy Storage Solutions<br>From Concept to Delivery",
+                heroDesc: "Leveraging strong R&D capabilities and flexible production lines, we provide one-stop customization from cell selection, PACK design, system integration to EMS/BMS. Suitable for C&I, construction machinery, residential and more.",
+                cert1: "Full Customization", cert2: "In-house Labs", cert3: "Flexible Production",
+                slide1Title: "PACK Lab", slide1Desc: "Cell testing, module design, safety validation",
+                slide2Title: "Control System Lab", slide2Desc: "BMS/EMS R&D, software simulation & testing",
+                slide3Title: "ESS Pilot Lab", slide3Desc: "Product pilot validation, reliability testing",
+                rdTitle: "R&D Conditions & Capabilities",
+                rdDesc: "Our company has technical departments for ESS PACK, software, and construction machinery electrification, equipped with PACK lab, control system lab, and ESS pilot lab. We continuously invest in innovation to deliver safe, efficient, highly integrated customized products.",
+                rd1Title: "ESS PACK Dept.", rd1Desc: "Cell selection, module design, thermal simulation",
+                rd2Title: "Software R&D Dept.", rd2Desc: "BMS/EMS algorithms, cloud monitoring, APP",
+                rd3Title: "Construction Machinery Electrification", rd3Desc: "Electrification solutions for trucks, excavators, mining vehicles",
+                rd4Title: "Three Core Labs", rd4Desc: "PACK Lab, Control System Lab, ESS Pilot Lab",
+                tableTitle: "Customization Process", tableSub: "From requirement to mass delivery, transparent and professional",
+                feature1: "Requirement Analysis", feature2: "Solution Design", feature3: "Prototype Validation",
+                feature4: "Mass Production", feature5: "After-sales Support",
+                contactTitle: "Contact Us", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "No.246, Daxue South Rd, Zhengzhou, China", contactMobile: "13383710735",
+                formTitle: "Quick Inquiry", submitBtnText: "Send",
+                step1: "1. Requirement Collection", step1Desc: "Capacity, voltage, cycle life, environmental conditions",
+                step2: "2. Solution Design", step2Desc: "PACK structure, BMS/EMS, thermal management",
+                step3: "3. Prototype & Testing", step3Desc: "Sample production, performance validation, safety certification",
+                step4: "4. Pilot Run", step4Desc: "Small batch trial production, quality control",
+                step5: "5. Mass Production", step5Desc: "Flexible production line, rapid delivery",
+                step6: "6. After-sales Service", step6Desc: "Remote O&M, on-site support, warranty"
+            },
+            zh: {
+                heroTitle: "储能产品定制服务<br>从需求到交付，全程专业支持",
+                heroDesc: "依托强大的研发实力和柔性生产线，为您提供从电芯选型、PACK设计、系统集成到EMS/BMS的一站式定制解决方案。适用于工商业、工程机械、户用等各类场景。",
+                cert1: "全流程定制", cert2: "自研实验室", cert3: "柔性生产线",
+                slide1Title: "PACK实验室", slide1Desc: "电芯测试、模组设计、安全验证",
+                slide2Title: "控制系统实验室", slide2Desc: "BMS/EMS研发，软件仿真与测试",
+                slide3Title: "储能中试实验室", slide3Desc: "产品中试验证、可靠性测试",
+                rdTitle: "科研条件与研发实力",
+                rdDesc: "厂家设有储能PACK、软件、工程机械电动化技术部，拥有PACK实验室、控制系统实验室、储能中试实验室等研发场地和实验条件。团队持续投入创新，为客户提供安全、高效、高集成的定制化储能产品。",
+                rd1Title: "储能PACK技术部", rd1Desc: "电芯选型、模组设计、热仿真、结构优化",
+                rd2Title: "软件研发部", rd2Desc: "BMS/EMS算法、云平台监控、APP开发",
+                rd3Title: "工程机械电动化部", rd3Desc: "重卡、挖机、矿车等特种车辆电动化方案",
+                rd4Title: "三大实验室", rd4Desc: "PACK实验室、控制系统实验室、储能中试实验室",
+                tableTitle: "定制服务流程", tableSub: "从需求沟通到批量交付，每一步都专业透明",
+                feature1: "需求分析", feature2: "方案设计", feature3: "样机验证",
+                feature4: "量产交付", feature5: "售后支持",
+                contactTitle: "联系我们", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "中国 河南郑州市大学南路246号", contactMobile: "13383710735",
+                formTitle: "快速咨询", submitBtnText: "发送咨询",
+                step1: "1. 需求收集", step1Desc: "容量、电压、循环寿命、环境要求",
+                step2: "2. 方案设计", step2Desc: "PACK结构、BMS/EMS、热管理方案",
+                step3: "3. 样机试制与测试", step3Desc: "样品制作、性能验证、安全认证",
+                step4: "4. 小批量试产", step4Desc: "试生产、质量控制",
+                step5: "5. 批量交付", step5Desc: "柔性产线、快速交付",
+                step6: "6. 售后服务", step6Desc: "远程运维、现场支持、质保"
+            },
+            ar: {
+                heroTitle: "خدمات تخصيص تخزين الطاقة<br>من الاحتياج إلى التسليم",
+                heroDesc: "بفضل قدرات البحث والتطوير القوية وخطوط الإنتاج المرنة، نقدم حلول تخصيص شاملة من اختيار الخلايا، تصميم PACK، تكامل النظام إلى EMS/BMS. مناسبة للتخزين التجاري والصناعي والمعدات الهندسية والمنازل.",
+                cert1: "تخصيص كامل", cert2: "مختبرات داخلية", cert3: "إنتاج مرن",
+                slide1Title: "مختبر PACK", slide1Desc: "اختبار الخلايا، تصميم الوحدات، التحقق من السلامة",
+                slide2Title: "مختبر أنظمة التحكم", slide2Desc: "تطوير BMS/EMS، محاكاة واختبار البرمجيات",
+                slide3Title: "مختبر ESS التجريبي", slide3Desc: "التحقق التجريبي للمنتج، اختبار الموثوقية",
+                rdTitle: "ظروف البحث والتطوير",
+                rdDesc: "تمتلك الشركة أقسامًا تقنية لتخزين الطاقة PACK والبرمجيات والكهرباء للمعدات الهندسية، ومجهزة بمختبر PACK ومختبر أنظمة التحكم ومختبر ESS التجريبي. نستثمر باستمرار في الابتكار لتقديم منتجات مخصصة آمنة وفعالة ومتكاملة.",
+                rd1Title: "قسم PACK", rd1Desc: "اختيار الخلايا، تصميم الوحدات، المحاكاة الحرارية",
+                rd2Title: "قسم البرمجيات", rd2Desc: "خوارزميات BMS/EMS، مراقبة سحابية، تطوير تطبيقات",
+                rd3Title: "كهرباء المعدات الهندسية", rd3Desc: "حلول كهربائية للشاحنات والحفارات والمركبات التعدينية",
+                rd4Title: "ثلاثة مختبرات رئيسية", rd4Desc: "مختبر PACK، مختبر أنظمة التحكم، مختبر ESS التجريبي",
+                tableTitle: "عملية التخصيص", tableSub: "من الاحتياج إلى التسليم، شفافة واحترافية",
+                feature1: "تحليل الاحتياج", feature2: "تصميم الحل", feature3: "التحقق من النموذج الأولي",
+                feature4: "الإنتاج الضخم", feature5: "الدعم بعد البيع",
+                contactTitle: "اتصل بنا", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "رقم 246، طريق داشوي الجنوبي، تشنغتشو، خنان، الصين", contactMobile: "13383710735",
+                formTitle: "استفسار سريع", submitBtnText: "إرسال",
+                step1: "1. جمع الاحتياجات", step1Desc: "السعة، الجهد، عمر الدورة، الظروف البيئية",
+                step2: "2. تصميم الحل", step2Desc: "هيكل PACK، BMS/EMS، إدارة حرارية",
+                step3: "3. النموذج الأولي والاختبار", step3Desc: "إنتاج العينات، التحقق من الأداء، شهادات السلامة",
+                step4: "4. الإنتاج التجريبي", step4Desc: "إنتاج دفعات صغيرة، مراقبة الجودة",
+                step5: "5. الإنتاج الضخم", step5Desc: "خط إنتاج مرن، تسليم سريع",
+                step6: "6. خدمة ما بعد البيع", step6Desc: "صيانة عن بعد، دعم ميداني، ضمان"
+            }
+        };
+
+        // 渲染表格（定制流程6个步骤）
+        function renderTable(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            const thead = document.getElementById("tableHeader");
+            const tbody = document.getElementById("tableBody");
+            thead.innerHTML = `<tr class="product-header"><th>${lang === 'ar' ? 'الخطوة' : (lang === 'zh' ? '步骤' : 'Step')}</th><th>${lang === 'ar' ? 'الوصف' : (lang === 'zh' ? '说明' : 'Description')}</th>`;
+            const steps = [
+                { step: loc.step1, desc: loc.step1Desc },
+                { step: loc.step2, desc: loc.step2Desc },
+                { step: loc.step3, desc: loc.step3Desc },
+                { step: loc.step4, desc: loc.step4Desc },
+                { step: loc.step5, desc: loc.step5Desc },
+                { step: loc.step6, desc: loc.step6Desc }
+            ];
+            let html = "";
+            for (let s of steps) {
+                html += `<tr><td class="param-label">${s.step}</td><td>${s.desc}</td></tr>`;
+            }
+            tbody.innerHTML = html;
+        }
+
+        // 更新页面UI（包括轮播图的标题/描述，共3张）
+        function updatePageUI(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            document.getElementById("heroTitle").innerHTML = loc.heroTitle;
+            document.getElementById("heroDesc").innerText = loc.heroDesc;
+            document.getElementById("cert1").innerText = loc.cert1;
+            document.getElementById("cert2").innerText = loc.cert2;
+            document.getElementById("cert3").innerText = loc.cert3;
+            document.getElementById("slide1Title").innerText = loc.slide1Title;
+            document.getElementById("slide1Desc").innerText = loc.slide1Desc;
+            document.getElementById("slide2Title").innerText = loc.slide2Title;
+            document.getElementById("slide2Desc").innerText = loc.slide2Desc;
+            document.getElementById("slide3Title").innerText = loc.slide3Title;
+            document.getElementById("slide3Desc").innerText = loc.slide3Desc;
+            document.getElementById("rdTitle").innerHTML = `<i class="fas fa-flask"></i> ${loc.rdTitle}`;
+            document.getElementById("rdDesc").innerText = loc.rdDesc;
+            document.getElementById("rd1Title").innerText = loc.rd1Title;
+            document.getElementById("rd1Desc").innerText = loc.rd1Desc;
+            document.getElementById("rd2Title").innerText = loc.rd2Title;
+            document.getElementById("rd2Desc").innerText = loc.rd2Desc;
+            document.getElementById("rd3Title").innerText = loc.rd3Title;
+            document.getElementById("rd3Desc").innerText = loc.rd3Desc;
+            document.getElementById("rd4Title").innerText = loc.rd4Title;
+            document.getElementById("rd4Desc").innerText = loc.rd4Desc;
+            document.getElementById("tableTitle").innerText = loc.tableTitle;
+            document.getElementById("tableSub").innerText = loc.tableSub;
+            document.getElementById("feature1").innerText = loc.feature1;
+            document.getElementById("feature2").innerText = loc.feature2;
+            document.getElementById("feature3").innerText = loc.feature3;
+            document.getElementById("feature4").innerText = loc.feature4;
+            document.getElementById("feature5").innerText = loc.feature5;
+            document.getElementById("contactTitle").innerText = loc.contactTitle;
+            document.getElementById("contactPhone").innerText = loc.contactPhone;
+            document.getElementById("contactEmail").innerText = loc.contactEmail;
+            document.getElementById("contactAddress").innerText = loc.contactAddress;
+            document.getElementById("contactMobile").innerText = loc.contactMobile;
+            document.getElementById("formTitle").innerHTML = `<i class="fas fa-paper-plane"></i> ${loc.formTitle}`;
+            document.getElementById("submitBtnText").innerText = loc.submitBtnText;
+            renderTable(lang);
+        }
+
+        // 注册语言切换
+        if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+            DesertPower.onLanguageChange((lang) => {
+                updatePageUI(lang);
+            });
+            updatePageUI(DesertPower.getCurrentLang());
+        } else {
+            window.addEventListener('load', () => {
+                if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+                    DesertPower.onLanguageChange((lang) => updatePageUI(lang));
+                    updatePageUI(DesertPower.getCurrentLang());
+                } else {
+                    console.warn("DesertPower not loaded, using default language");
+                    updatePageUI('zh');
+                }
+            });
+        }
+
+        // 表单提交（与产品页面相同）
+        const form = document.getElementById('quickContact');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmailInput').value.trim();
+                const msg = document.getElementById('contactMsg').value.trim();
+                const statusDiv = document.getElementById('formStatus');
+                const getLang = () => (typeof DesertPower !== 'undefined' && DesertPower.getCurrentLang) ? DesertPower.getCurrentLang() : 'zh';
+                const currentLang = getLang();
+                const loc = pageLocales[currentLang] || pageLocales.zh;
+                if (!name || !email) {
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg || "请填写完整信息";
+                    return;
+                }
+                const btn = document.getElementById('submitBtn');
+                const originalText = document.getElementById('submitBtnText').innerText;
+                try {
+                    btn.disabled = true;
+                    document.getElementById('submitBtnText').innerText = loc.sending || "发送中...";
+                    if (typeof DesertPower !== 'undefined' && DesertPower.emailjs) {
+                        await emailjs.send(DesertPower.emailjs.serviceId, DesertPower.emailjs.templateId, {
+                            from_name: name, from_email: email, message: msg, product: "Custom Service Inquiry"
+                        });
+                    } else {
+                        await emailjs.send("service_c8wh567", "template_jh5s1nt", {
+                            from_name: name, from_email: email, message: msg, product: "Custom Service Inquiry"
+                        });
+                    }
+                    statusDiv.style.color = "#1a4a3a";
+                    statusDiv.innerText = loc.successMsg || "感谢咨询，我们会尽快联系您！";
+                    form.reset();
+                } catch (err) {
+                    console.error(err);
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg || "发送失败，请稍后重试。";
+                } finally {
+                    btn.disabled = false;
+                    document.getElementById('submitBtnText').innerText = originalText;
+                    setTimeout(() => statusDiv.innerText = "", 5000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

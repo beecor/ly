@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>大型移动交直流供电车 | Liayang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/components.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 id="heroTitle">大型移动交直流供电车<br>为大型拖电挖机专属供电</h1>
+                <p id="heroDesc">1736kWh / 1929kWh / 2122kWh 弹性容量 | 交直流双输出 | 液冷+风冷 | 多舱安全设计 | 电动底盘短距离自行 | 矿区/基建最佳伙伴。</p>
+                <div class="cert-badge">
+                    <i class="fas fa-plug"></i> <span id="cert1">交直流双输出</span> &nbsp;|&nbsp;
+                    <i class="fas fa-shield-alt"></i> <span id="cert2">C4-M防腐/IP54</span> &nbsp;|&nbsp;
+                    <i class="fas fa-charging-station"></i> <span id="cert3">电动底盘自行</span>
+                </div>
+            </div>
+            <div class="hero-icon">
+                <i class="fas fa-digging"></i>
+                <i class="fas fa-bolt"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="gallery-section">
+            <div class="title-decoration">
+                <i class="fas fa-images"></i>
+                <h2 class="section-title" id="galleryTitle">产品实景与应用</h2>
+                <p id="gallerySub">高可靠移动供电解决方案，专为极端工况打造</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/acdc-1.jpg" alt="供电车整机" loading="lazy"><div class="gallery-caption" id="caption1">整车外观 · 交直流一体</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/acdc-2.jpg" alt="拖电挖机供电场景"><div class="gallery-caption" id="caption2">为大型拖电挖机现场供电</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/acdc-3.jpg" alt="多舱安全设计" loading="lazy"><div class="gallery-caption" id="caption3">多舱消防+液冷/风冷温控</div></div>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <div class="title-decoration">
+                <i class="fas fa-exchange-alt"></i>
+                <h2 class="section-title" id="tableTitle">技术规格</h2>
+                <p id="tableSub">专为矿山、大型基建场景设计，交直流一体，安全高效</p>
+            </div>
+            <!-- 表格滚动提示 -->
+            <div class="table-scroll-hint">
+                <i class="fas fa-arrows-alt-h"></i> <span id="scrollHint">左右滑动查看完整参数</span>
+            </div>
+            <div class="table-wrapper">
+                <table class="spec-table" id="specTable">
+                    <thead id="tableHeader"></thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+            <div class="certificate-row">
+                <div class="cert-card"><i class="fas fa-temperature-high"></i> <span id="feature1">宽温工作 -20℃~+50℃</span></div>
+                <div class="cert-card"><i class="fas fa-fire-extinguisher"></i> <span id="feature2">舱级+PACK级消防+水消防+通风</span></div>
+                <div class="cert-card"><i class="fas fa-tachometer-alt"></i> <span id="feature3">1233kW 额定功率</span></div>
+                <div class="cert-card"><i class="fas fa-road"></i> <span id="feature4">3轴牵引+2轴半挂 / 短距离自行</span></div>
+                <div class="cert-card"><i class="fas fa-plug"></i> <span id="feature5">航插/铜排/国标插座输出</span></div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt"></i> <span id="contactTitle">联系我们</span></h3>
+                    <div class="contact-detail"><i class="fas fa-phone"></i> <span id="contactPhone">0371-55919895</span></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> <span id="contactEmail">beecor@outlook.com</span></div>
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span id="contactAddress">中国 河南郑州市大学南路246号</span></div>
+                    <div class="contact-detail"><i class="fas fa-mobile-alt"></i> <span id="contactMobile">13383710735</span></div>
+                </div>
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> <span id="formTitle">快速咨询</span></h3>
+                    <form id="quickContact">
+                        <input type="text" id="contactName" placeholder="您的姓名" required>
+                        <input type="email" id="contactEmailInput" placeholder="电子邮箱" required>
+                        <textarea rows="2" id="contactMsg" placeholder="留言 (产品型号、需求等)"></textarea>
+                        <button type="submit" id="submitBtn"><span id="submitBtnText">发送咨询</span> <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <div id="formStatus" style="margin-top:0.8rem;font-size:0.8rem;text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // 产品数据（交直流供电车，单产品多容量）
+        const productData = {
+            batteryCap: "1736 kWh / 1929 kWh / 2122 kWh",
+            cabinetDim: "5500×2438×2338 mm",
+            vehicleDim: "7430×2900×3452 mm",
+            weight: "19t/29t · 22t/32t · 23t/33t",
+            corrosion: "C4-M",
+            ip: "IP54",
+            temp: "-20℃ ~ +50℃",
+            humidity: "0~95% RH",
+            fire: "舱级防护 + PACK级防护 + 通风换气 + 水消防",
+            cooling: "电池舱液冷 / 电气舱风冷",
+            compartment: "多舱设计",
+            powerDist: "直流 + 交流输出",
+            acOutput: "航插 / 铜排 / 国标插座",
+            ratedPower: "1233 kW",
+            chargeDischargeTime: "3.9h (1736) / 4.3h (1929) / 4.8h (2122)",
+            movement: "3轴牵引 + 2轴半挂 / 短距离自行",
+            cellType: "磷酸铁锂 314Ah",
+            dcVoltage: "537.6V ~ 691.2V DC",
+            gridVoltage: "320V ~ 420V AC",
+            gridFreq: "45 ~ 55 Hz",
+            chassisType: "电动底盘",
+            motorPower: "150kW × 2",
+            speed: "0 ~ 3.5 km/h"
+        };
+
+        const paramKeys = [
+            "paramBatteryCap","paramCabinetDim","paramVehicleDim","paramWeight","paramCorrosion",
+            "paramIP","paramTemp","paramHumidity","paramFire","paramCooling","paramCompartment",
+            "paramPowerDist","paramACOutput","paramRatedPower","paramChargeDischargeTime","paramMovement",
+            "paramCellType","paramDCVoltage","paramGridVoltage","paramGridFreq","paramChassisType",
+            "paramMotorPower","paramSpeed"
+        ];
+
+        // 页面专属多语言资源
+        const pageLocales = {
+            en: {
+                heroTitle: "Heavy-duty AC/DC Mobile Power Supply<br>Dedicated for Electric Cable Excavators",
+                heroDesc: "1736kWh / 1929kWh / 2122kWh flexible capacity | AC+DC dual output | Liquid + air cooling | Multi-compartment safety design | Electric chassis self-propelled short distance | Best partner for mining & infrastructure.",
+                cert1: "AC+DC Output", cert2: "C4-M / IP54", cert3: "Electric Self-propelled",
+                galleryTitle: "Product Gallery", gallerySub: "Reliable mobile power solutions for extreme conditions",
+                caption1: "Vehicle exterior · AC/DC integrated", caption2: "Powering large electric excavators on-site", caption3: "Multi-compartment fire suppression + liquid/air cooling",
+                tableTitle: "Technical Specifications", tableSub: "Designed for mining and large infrastructure projects, integrated AC/DC, safe and efficient",
+                feature1: "Wide temp -20℃~+50℃", feature2: "Compartment+PACK fire + water + ventilation", feature3: "1233kW Rated Power",
+                feature4: "3-axle tractor + 2-axle semi-trailer / short self-propelled", feature5: "Aircraft plug / busbar / national socket output",
+                contactTitle: "Contact Us", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "No.246, Daxue South Rd, Zhengzhou, China", contactMobile: "13383710735",
+                formTitle: "Quick Inquiry", submitBtnText: "Send", sending: "Sending...",
+                successMsg: "Thank you! We'll contact you soon.", errorMsg: "Failed. Please try again.",
+                scrollHint: "Swipe left/right to view full specs",
+                paramBatteryCap: "Battery Capacity", paramCabinetDim: "Cabinet Dim (W*D*H)", paramVehicleDim: "Vehicle Dim (L*W*H)",
+                paramWeight: "Weight (Cabinet/Vehicle)", paramCorrosion: "Corrosion Grade", paramIP: "IP Rating (Battery Compartment)",
+                paramTemp: "Operating Temp.", paramHumidity: "Humidity", paramFire: "Fire Suppression System",
+                paramCooling: "Thermal Management", paramCompartment: "Compartment Design", paramPowerDist: "Power Distribution",
+                paramACOutput: "AC Output Interface", paramRatedPower: "Rated Power", paramChargeDischargeTime: "Charge/Discharge Duration",
+                paramMovement: "Movement Method", paramCellType: "Cell Type", paramDCVoltage: "DC Voltage Range",
+                paramGridVoltage: "Grid Voltage Range", paramGridFreq: "Grid Frequency Range", paramChassisType: "Chassis Type",
+                paramMotorPower: "Motor Power", paramSpeed: "Travel Speed"
+            },
+            zh: {
+                heroTitle: "大型移动交直流供电车<br>为大型拖电挖机专属供电",
+                heroDesc: "1736kWh / 1929kWh / 2122kWh 弹性容量 | 交直流双输出 | 液冷+风冷 | 多舱安全设计 | 电动底盘短距离自行 | 矿区/基建最佳伙伴。",
+                cert1: "交直流双输出", cert2: "C4-M防腐/IP54", cert3: "电动底盘自行",
+                galleryTitle: "产品实景与应用", gallerySub: "高可靠移动供电解决方案，专为极端工况打造",
+                caption1: "整车外观 · 交直流一体", caption2: "为大型拖电挖机现场供电", caption3: "多舱消防+液冷/风冷温控",
+                tableTitle: "技术规格", tableSub: "专为矿山、大型基建场景设计，交直流一体，安全高效",
+                feature1: "宽温工作 -20℃~+50℃", feature2: "舱级+PACK级消防+水消防+通风", feature3: "1233kW 额定功率",
+                feature4: "3轴牵引+2轴半挂 / 短距离自行", feature5: "航插/铜排/国标插座输出",
+                contactTitle: "联系我们", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "中国 河南郑州市大学南路246号", contactMobile: "13383710735",
+                formTitle: "快速咨询", submitBtnText: "发送咨询", sending: "发送中...",
+                successMsg: "感谢咨询，我们会尽快联系您！", errorMsg: "发送失败，请稍后重试。",
+                scrollHint: "左右滑动查看完整参数",
+                paramBatteryCap: "电池容量", paramCabinetDim: "柜体尺寸(宽*深*高)", paramVehicleDim: "整机尺寸(长*宽*高)",
+                paramWeight: "重量(柜体/整机)", paramCorrosion: "防腐等级", paramIP: "电池舱IP防护等级",
+                paramTemp: "工作温度", paramHumidity: "工作湿度", paramFire: "消防系统", paramCooling: "温控方式",
+                paramCompartment: "分舱设计", paramPowerDist: "配电设计", paramACOutput: "交流输出接口",
+                paramRatedPower: "额定功率", paramChargeDischargeTime: "充/放电时长", paramMovement: "移动方式",
+                paramCellType: "电芯类型", paramDCVoltage: "系统电压范围", paramGridVoltage: "允许电网电压",
+                paramGridFreq: "电网频率范围", paramChassisType: "底盘参数", paramMotorPower: "电机功率",
+                paramSpeed: "行走速度"
+            },
+            ar: {
+                heroTitle: "وحدة تزويد طاقة متنقلة كبيرة AC/DC<br>مخصصة للحفارات الكهربائية",
+                heroDesc: "سعة مرنة 1736/1929/2122 كيلوواط/ساعة | خرج AC+DC مزدوج | تبريد سائل + هواء | تصميم متعدد المقصورات | هيكل كهربائي ذاتي الحركة لمسافات قصيرة | أفضل شريك للمناجم والبنية التحتية.",
+                cert1: "خرج AC+DC", cert2: "C4-M / IP54", cert3: "كهربائي ذاتي الحركة",
+                galleryTitle: "معرض المنتج", gallerySub: "حلول طاقة متنقلة موثوقة للظروف القاسية",
+                caption1: "هيكل المركبة · متكامل AC/DC", caption2: "تزويد الحفارات الكهربائية الكبيرة بالطاقة في الموقع", caption3: "إطفاء متعدد المقصورات + تبريد سائل/هواء",
+                tableTitle: "المواصفات الفنية", tableSub: "مصمم للمناجم ومشاريع البنية التحتية الكبيرة، متكامل AC/DC، آمن وفعال",
+                feature1: "درجة حرارة واسعة -20℃~+50℃", feature2: "إطفاء حريق بالمقصورة+الحزمة+ماء+تهوية", feature3: "الطاقة المقدرة 1233kW",
+                feature4: "جرار 3 محاور + نصف مقطورة 2 محاور / ذاتي الحركة لمسافات قصيرة", feature5: "قابس طيران / قضيب ناقل / مقبس وطني",
+                contactTitle: "اتصل بنا", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "رقم 246، طريق داشوي الجنوبي، تشنغتشو، خنان، الصين", contactMobile: "13383710735",
+                formTitle: "استفسار سريع", submitBtnText: "إرسال", sending: "جاري الإرسال...",
+                successMsg: "شكراً، سنتصل بك قريباً.", errorMsg: "فشل الإرسال. حاول مرة أخرى.",
+                scrollHint: "اسحب يمينًا/يسارًا لعرض المواصفات الكاملة",
+                paramBatteryCap: "سعة البطارية", paramCabinetDim: "أبعاد الخزانة (عرض*عمق*ارتفاع)", paramVehicleDim: "أبعاد المركبة (طول*عرض*ارتفاع)",
+                paramWeight: "الوزن (خزانة/مركبة)", paramCorrosion: "درجة مقاومة التآكل", paramIP: "درجة حماية حجرة البطارية",
+                paramTemp: "درجة حرارة التشغيل", paramHumidity: "الرطوبة", paramFire: "نظام الإطفاء", paramCooling: "طريقة التبريد",
+                paramCompartment: "تصميم المقصورات", paramPowerDist: "توزيع الطاقة", paramACOutput: "واجهة خرج AC",
+                paramRatedPower: "الطاقة المقدرة", paramChargeDischargeTime: "مدة الشحن/التفريغ", paramMovement: "طريقة الحركة",
+                paramCellType: "نوع الخلية", paramDCVoltage: "نطاق جهد التيار المستمر", paramGridVoltage: "نطاق جهد الشبكة المسموح",
+                paramGridFreq: "نطاق تردد الشبكة", paramChassisType: "معلمات الهيكل", paramMotorPower: "قوة المحرك",
+                paramSpeed: "سرعة السير"
+            }
+        };
+
+        // 渲染表格（单列）
+        function renderTable(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            const thead = document.getElementById("tableHeader");
+            const tbody = document.getElementById("tableBody");
+            thead.innerHTML = `<tr class="product-header"><th>${lang === 'ar' ? 'المعامل' : (lang === 'zh' ? '参数' : 'Parameter')}</th><th>${lang === 'ar' ? 'وحدة تزويد طاقة AC/DC' : (lang === 'zh' ? '交直流移动供电车' : 'AC/DC Mobile Power Supply')}</th></tr>`;
+            
+            const valueMap = {
+                paramBatteryCap: productData.batteryCap, paramCabinetDim: productData.cabinetDim, paramVehicleDim: productData.vehicleDim,
+                paramWeight: productData.weight, paramCorrosion: productData.corrosion, paramIP: productData.ip,
+                paramTemp: productData.temp, paramHumidity: productData.humidity, paramFire: productData.fire,
+                paramCooling: productData.cooling, paramCompartment: productData.compartment, paramPowerDist: productData.powerDist,
+                paramACOutput: productData.acOutput, paramRatedPower: productData.ratedPower,
+                paramChargeDischargeTime: productData.chargeDischargeTime, paramMovement: productData.movement,
+                paramCellType: productData.cellType, paramDCVoltage: productData.dcVoltage, paramGridVoltage: productData.gridVoltage,
+                paramGridFreq: productData.gridFreq, paramChassisType: productData.chassisType, paramMotorPower: productData.motorPower,
+                paramSpeed: productData.speed
+            };
+            
+            let html = "";
+            for (let key of paramKeys) {
+                let label = loc[key];
+                let val = valueMap[key] || "—";
+                html += `<tr><td class="param-label">${label}${val === "—" ? " " : ""}</td><td>${val}</td></tr>`;
+            }
+            // 添加专属备注行
+            const noteText = lang === 'en' ? "⚡ Dedicated for electric cable excavators | AC+DC simultaneous output | Customizable upon request" : 
+                             (lang === 'zh' ? "⚡ 专为拖电挖机设计 | 交直流同时输出 | 支持定制化需求" : 
+                             "⚡ مخصص للحفارات الكهربائية | خرج AC+DC متزامن | قابل للتخصيص حسب الطلب");
+            html += `<tr style="background:#faf3e6;"><td class="param-label">${lang === 'ar' ? 'ملاحظات خاصة' : (lang === 'zh' ? '专属备注' : 'Special Notes')}</td><td style="color:#b87333; font-weight:500;">${noteText}</td></tr>`;
+            tbody.innerHTML = html;
+        }
+
+        // 更新页面UI
+        function updatePageUI(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            document.getElementById("heroTitle").innerHTML = loc.heroTitle;
+            document.getElementById("heroDesc").innerText = loc.heroDesc;
+            document.getElementById("cert1").innerText = loc.cert1;
+            document.getElementById("cert2").innerText = loc.cert2;
+            document.getElementById("cert3").innerText = loc.cert3;
+            document.getElementById("galleryTitle").innerText = loc.galleryTitle;
+            document.getElementById("gallerySub").innerText = loc.gallerySub;
+            document.getElementById("caption1").innerText = loc.caption1;
+            document.getElementById("caption2").innerText = loc.caption2;
+            document.getElementById("caption3").innerText = loc.caption3;
+            document.getElementById("tableTitle").innerText = loc.tableTitle;
+            document.getElementById("tableSub").innerText = loc.tableSub;
+            document.getElementById("scrollHint").innerText = loc.scrollHint;
+            document.getElementById("feature1").innerText = loc.feature1;
+            document.getElementById("feature2").innerText = loc.feature2;
+            document.getElementById("feature3").innerText = loc.feature3;
+            document.getElementById("feature4").innerText = loc.feature4;
+            document.getElementById("feature5").innerText = loc.feature5;
+            document.getElementById("contactTitle").innerText = loc.contactTitle;
+            document.getElementById("contactPhone").innerText = loc.contactPhone;
+            document.getElementById("contactEmail").innerText = loc.contactEmail;
+            document.getElementById("contactAddress").innerText = loc.contactAddress;
+            document.getElementById("contactMobile").innerText = loc.contactMobile;
+            document.getElementById("formTitle").innerHTML = `<i class="fas fa-paper-plane"></i> ${loc.formTitle}`;
+            document.getElementById("submitBtnText").innerText = loc.submitBtnText;
+            renderTable(lang);
+        }
+
+        // 注册语言切换回调
+        if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+            DesertPower.onLanguageChange((lang) => {
+                updatePageUI(lang);
+            });
+            updatePageUI(DesertPower.getCurrentLang());
+        } else {
+            window.addEventListener('load', () => {
+                if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+                    DesertPower.onLanguageChange((lang) => updatePageUI(lang));
+                    updatePageUI(DesertPower.getCurrentLang());
+                } else {
+                    console.warn("DesertPower not loaded, using default language");
+                    updatePageUI('zh');
+                }
+            });
+        }
+
+        // 表单提交
+        const form = document.getElementById('quickContact');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmailInput').value.trim();
+                const msg = document.getElementById('contactMsg').value.trim();
+                const statusDiv = document.getElementById('formStatus');
+                const getLang = () => (typeof DesertPower !== 'undefined' && DesertPower.getCurrentLang) ? DesertPower.getCurrentLang() : 'zh';
+                const currentLang = getLang();
+                const loc = pageLocales[currentLang] || pageLocales.zh;
+                if (!name || !email) {
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                    return;
+                }
+                const btn = document.getElementById('submitBtn');
+                const originalText = document.getElementById('submitBtnText').innerText;
+                try {
+                    btn.disabled = true;
+                    document.getElementById('submitBtnText').innerText = loc.sending;
+                    if (typeof DesertPower !== 'undefined' && DesertPower.emailjs) {
+                        await emailjs.send(DesertPower.emailjs.serviceId, DesertPower.emailjs.templateId, {
+                            from_name: name, from_email: email, message: msg, product: "AC/DC Mobile Power Supply for Excavator"
+                        });
+                    } else {
+                        await emailjs.send("service_c8wh567", "template_jh5s1nt", {
+                            from_name: name, from_email: email, message: msg, product: "AC/DC Mobile Power Supply for Excavator"
+                        });
+                    }
+                    statusDiv.style.color = "#1a4a3a";
+                    statusDiv.innerText = loc.successMsg;
+                    form.reset();
+                } catch (err) {
+                    console.error(err);
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                } finally {
+                    btn.disabled = false;
+                    document.getElementById('submitBtnText').innerText = originalText;
+                    setTimeout(() => statusDiv.innerText = "", 5000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

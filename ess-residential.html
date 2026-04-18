@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>工商业储能 - 户储系列 | Liayang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/components.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 id="heroTitle">工商业储能 · 户储系列<br>模块化设计 · 灵活扩容</h1>
+                <p id="heroDesc">8kW/20kWh 单相堆叠式 | 20kW/40kWh 三相堆叠式 | 快插式连接 | 智能BMS | 多重保护 | 适用于中小工业企业及商业店面应急备用电源、峰谷套利。</p>
+                <div class="cert-badge">
+                    <i class="fas fa-plug"></i> <span id="cert1">模块化堆叠</span> &nbsp;|&nbsp;
+                    <i class="fas fa-shield-alt"></i> <span id="cert2">IP65防护</span> &nbsp;|&nbsp;
+                    <i class="fas fa-charging-station"></i> <span id="cert3">智能BMS</span>
+                </div>
+            </div>
+            <div class="hero-icon">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="gallery-section">
+            <div class="title-decoration">
+                <i class="fas fa-images"></i>
+                <h2 class="section-title" id="galleryTitle">产品实景与应用</h2>
+                <p id="gallerySub">堆叠式设计，即插即用，适用于工商业及家庭储能场景</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/ess-1.jpg" alt="堆叠式户储" loading="lazy"><div class="gallery-caption" id="caption1">整机外观 · 堆叠式设计</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/ess-2.jpg" alt="安装场景"><div class="gallery-caption" id="caption2">工商业店面/小型工厂安装</div></div>
+                <div class="gallery-card"><img src="https://img.liayang.com/zd/ess-3.jpg" alt="智能BMS" loading="lazy"><div class="gallery-caption" id="caption3">智能BMS · 多重保护</div></div>
+            </div>
+        </div>
+
+        <div class="product-section">
+            <div class="title-decoration">
+                <i class="fas fa-charging-station"></i>
+                <h2 class="section-title" id="tableTitle">技术规格对比</h2>
+                <p id="tableSub">单相堆叠式 / 三相堆叠式，满足不同功率需求</p>
+            </div>
+            <!-- 表格滚动提示 -->
+            <div class="table-scroll-hint">
+                <i class="fas fa-arrows-alt-h"></i> <span id="scrollHint">左右滑动查看完整参数</span>
+            </div>
+            <div class="table-wrapper">
+                <table class="spec-table" id="specTable">
+                    <thead id="tableHeader"></thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+            <div class="certificate-row">
+                <div class="cert-card"><i class="fas fa-temperature-low"></i> <span id="feature1">宽温 -10~55℃</span></div>
+                <div class="cert-card"><i class="fas fa-fire-extinguisher"></i> <span id="feature2">智能BMS多重保护</span></div>
+                <div class="cert-card"><i class="fas fa-cube"></i> <span id="feature3">模块化堆叠</span></div>
+                <div class="cert-card"><i class="fas fa-plug"></i> <span id="feature4">快插式连接</span></div>
+                <div class="cert-card"><i class="fas fa-chart-line"></i> <span id="feature5">峰谷套利/应急备电</span></div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt"></i> <span id="contactTitle">联系我们</span></h3>
+                    <div class="contact-detail"><i class="fas fa-phone"></i> <span id="contactPhone">0371-55919895</span></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> <span id="contactEmail">beecor@outlook.com</span></div>
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span id="contactAddress">中国 河南郑州市大学南路246号</span></div>
+                    <div class="contact-detail"><i class="fas fa-mobile-alt"></i> <span id="contactMobile">13383710735</span></div>
+                </div>
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> <span id="formTitle">快速咨询</span></h3>
+                    <form id="quickContact">
+                        <input type="text" id="contactName" placeholder="您的姓名" required>
+                        <input type="email" id="contactEmailInput" placeholder="电子邮箱" required>
+                        <textarea rows="2" id="contactMsg" placeholder="留言 (产品型号、需求等)"></textarea>
+                        <button type="submit" id="submitBtn"><span id="submitBtnText">发送咨询</span> <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <div id="formStatus" style="margin-top:0.8rem;font-size:0.8rem;text-align:center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // 产品数据（两个型号）
+        const productDataA = {
+            name: "8kW/20kWh 单相堆叠式户储",
+            capacity: "20.48 kWh",
+            voltage: "204.8 V",
+            cellSpec: "3.2V 100Ah",
+            moduleGrouping: "1P16S",
+            moduleCapacity: "5.12 kWh",
+            systemGrouping: "4个串联",
+            dimension: "600×380×850 mm",
+            ip: "IP65",
+            temp: "-10~55℃",
+            humidity: "0~90% RH (无凝露)",
+            cooling: "自然冷却"
+        };
+        const productDataB = {
+            name: "20kW/40kWh 三相堆叠式户储",
+            capacity: "40.96 kWh",
+            voltage: "409.6 V",
+            cellSpec: "3.2V 100Ah",
+            moduleGrouping: "1P16S",
+            moduleCapacity: "5.12 kWh",
+            systemGrouping: "8个串联",
+            dimension: "600×380×1450 mm",
+            ip: "IP65",
+            temp: "-10~55℃",
+            humidity: "0~90% RH (无凝露)",
+            cooling: "自然冷却"
+        };
+
+        const paramKeys = [
+            "paramCapacity", "paramVoltage", "paramCellSpec", "paramModuleGrouping",
+            "paramModuleCapacity", "paramSystemGrouping", "paramDimension",
+            "paramIP", "paramTemp", "paramHumidity", "paramCooling"
+        ];
+
+        // 页面专属多语言资源
+        const pageLocales = {
+            en: {
+                heroTitle: "Commercial & Industrial ESS · Residential Series<br>Modular Design · Flexible Expansion",
+                heroDesc: "8kW/20kWh Single-phase Stackable | 20kW/40kWh Three-phase Stackable | Plug-and-play connection | Smart BMS | Multiple protections | For small industrial enterprises and commercial stores (emergency backup power & peak-valley arbitrage).",
+                cert1: "Modular Stackable", cert2: "IP65 Protection", cert3: "Smart BMS",
+                galleryTitle: "Product Gallery", gallerySub: "Stackable design, plug-and-play for commercial and residential energy storage",
+                caption1: "Stackable Design", caption2: "Commercial Store/Small Factory Installation", caption3: "Smart BMS · Multiple Protections",
+                tableTitle: "Technical Specs Comparison", tableSub: "Single-phase Stackable / Three-phase Stackable",
+                feature1: "Wide temp -10~55℃", feature2: "Smart BMS Multiple Protections", feature3: "Modular Stackable",
+                feature4: "Plug-and-play Connection", feature5: "Peak-valley Arbitrage/Emergency Backup",
+                contactTitle: "Contact Us", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "No.246, Daxue South Rd, Zhengzhou, China", contactMobile: "13383710735",
+                formTitle: "Quick Inquiry", submitBtnText: "Send", sending: "Sending...",
+                successMsg: "Thank you! We'll contact you soon.", errorMsg: "Failed. Please try again.",
+                scrollHint: "Swipe left/right to view full specs",
+                paramCapacity: "System Capacity", paramVoltage: "System Voltage", paramCellSpec: "Cell Specification",
+                paramModuleGrouping: "Module Grouping", paramModuleCapacity: "Module Capacity", paramSystemGrouping: "System Grouping",
+                paramDimension: "Dimension (W×D×H)", paramIP: "Protection Rating", paramTemp: "Operating Temp.",
+                paramHumidity: "Operating Humidity", paramCooling: "Cooling Method"
+            },
+            zh: {
+                heroTitle: "工商业储能 · 户储系列<br>模块化设计 · 灵活扩容",
+                heroDesc: "8kW/20kWh 单相堆叠式 | 20kW/40kWh 三相堆叠式 | 快插式连接 | 智能BMS | 多重保护 | 适用于中小工业企业及商业店面应急备用电源、峰谷套利。",
+                cert1: "模块化堆叠", cert2: "IP65防护", cert3: "智能BMS",
+                galleryTitle: "产品实景与应用", gallerySub: "堆叠式设计，即插即用，适用于工商业及家庭储能场景",
+                caption1: "整机外观 · 堆叠式设计", caption2: "工商业店面/小型工厂安装", caption3: "智能BMS · 多重保护",
+                tableTitle: "技术规格对比", tableSub: "单相堆叠式 / 三相堆叠式",
+                feature1: "宽温 -10~55℃", feature2: "智能BMS多重保护", feature3: "模块化堆叠",
+                feature4: "快插式连接", feature5: "峰谷套利/应急备电",
+                contactTitle: "联系我们", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "中国 河南郑州市大学南路246号", contactMobile: "13383710735",
+                formTitle: "快速咨询", submitBtnText: "发送咨询", sending: "发送中...",
+                successMsg: "感谢咨询，我们会尽快联系您！", errorMsg: "发送失败，请稍后重试。",
+                scrollHint: "左右滑动查看完整参数",
+                paramCapacity: "系统标称容量", paramVoltage: "系统额定电压", paramCellSpec: "电芯规格",
+                paramModuleGrouping: "模组成组方式", paramModuleCapacity: "模组容量", paramSystemGrouping: "系统成组方式",
+                paramDimension: "整机尺寸(宽×深×高)", paramIP: "防护等级", paramTemp: "运行温度范围",
+                paramHumidity: "运行湿度范围(RH)", paramCooling: "冷却方式"
+            },
+            ar: {
+                heroTitle: "تخزين الطاقة التجاري والصناعي · سلسلة سكنية<br>تصميم معياري · توسع مرن",
+                heroDesc: "8kW/20kWh أحادي الطور قابل للتكديس | 20kW/40kWh ثلاثي الطور قابل للتكديس | توصيل سريع | BMS ذكي | حماية متعددة | للشركات الصناعية الصغيرة والمتوسطة والمحلات التجارية.",
+                cert1: "قابل للتكديس", cert2: "حماية IP65", cert3: "BMS ذكي",
+                galleryTitle: "معرض المنتج", gallerySub: "تصميم قابل للتكديس، جاهز للاستخدام للتخزين التجاري والسكني",
+                caption1: "تصميم قابل للتكديس", caption2: "تركيب في المتاجر/المصانع الصغيرة", caption3: "BMS ذكي · حماية متعددة",
+                tableTitle: "مقارنة المواصفات", tableSub: "أحادي الطور / ثلاثي الطور",
+                feature1: "درجة حرارة -10~55℃", feature2: "BMS ذكي وحماية متعددة", feature3: "تصميم معياري قابل للتكديس",
+                feature4: "توصيل سريع", feature5: "مراجحة الذروة / طاقة احتياطية",
+                contactTitle: "اتصل بنا", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+                contactAddress: "رقم 246، طريق داشوي الجنوبي، تشنغتشو، خنان، الصين", contactMobile: "13383710735",
+                formTitle: "استفسار سريع", submitBtnText: "إرسال", sending: "جاري الإرسال...",
+                successMsg: "شكراً، سنتصل بك قريباً.", errorMsg: "فشل الإرسال. حاول مرة أخرى.",
+                scrollHint: "اسحب يمينًا/يسارًا لعرض المواصفات الكاملة",
+                paramCapacity: "السعة الاسمية", paramVoltage: "الجهد الاسمي", paramCellSpec: "مواصفات الخلية",
+                paramModuleGrouping: "تجميع الوحدة", paramModuleCapacity: "سعة الوحدة", paramSystemGrouping: "تجميع النظام",
+                paramDimension: "الأبعاد (عرض×عمق×ارتفاع)", paramIP: "درجة الحماية", paramTemp: "نطاق درجة حرارة التشغيل",
+                paramHumidity: "نطاق الرطوبة", paramCooling: "طريقة التبريد"
+            }
+        };
+
+        // 渲染表格（两列对比）
+        function renderTable(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            const thead = document.getElementById("tableHeader");
+            const tbody = document.getElementById("tableBody");
+            thead.innerHTML = `<tr class="product-header"><th>${lang === 'ar' ? 'المعامل' : (lang === 'zh' ? '参数' : 'Parameter')}</th><th>${productDataA.name}</th><th>${productDataB.name}</th></tr>`;
+            
+            const valueMapA = {
+                paramCapacity: productDataA.capacity, paramVoltage: productDataA.voltage, paramCellSpec: productDataA.cellSpec,
+                paramModuleGrouping: productDataA.moduleGrouping, paramModuleCapacity: productDataA.moduleCapacity,
+                paramSystemGrouping: productDataA.systemGrouping, paramDimension: productDataA.dimension,
+                paramIP: productDataA.ip, paramTemp: productDataA.temp, paramHumidity: productDataA.humidity,
+                paramCooling: productDataA.cooling
+            };
+            const valueMapB = {
+                paramCapacity: productDataB.capacity, paramVoltage: productDataB.voltage, paramCellSpec: productDataB.cellSpec,
+                paramModuleGrouping: productDataB.moduleGrouping, paramModuleCapacity: productDataB.moduleCapacity,
+                paramSystemGrouping: productDataB.systemGrouping, paramDimension: productDataB.dimension,
+                paramIP: productDataB.ip, paramTemp: productDataB.temp, paramHumidity: productDataB.humidity,
+                paramCooling: productDataB.cooling
+            };
+            
+            let html = "";
+            for (let key of paramKeys) {
+                let label = loc[key];
+                let valA = valueMapA[key] || "—";
+                let valB = valueMapB[key] || "—";
+                html += `<tr><td class="param-label">${label}${valA === "—" && valB === "—" ? " " : ""}</td><td>${valA}</td><td>${valB}</td></tr>`;
+            }
+            // 添加产品特点行
+            const featureText = lang === 'en' ? "✔️ Modular stackable | Plug-and-play | Smart BMS | Visual indicator button | One-key start/stop" : 
+                                 (lang === 'zh' ? "✔️ 模块化堆叠 | 快插式连接 | 智能BMS | 可视化指示按钮 | 一键启停" : 
+                                 "✔️ تصميم معياري قابل للتكديس | توصيل سريع | BMS ذكي | زر مؤشر مرئي | تشغيل/إيقاف بزر واحد");
+            html += `<tr style="background:#faf3e6;"><td class="param-label">${lang === 'ar' ? 'ميزات المنتج' : (lang === 'zh' ? '产品特点' : 'Product Features')}</td><td colspan="2" style="color:#b87333; font-weight:500;">${featureText}</td></tr>`;
+            tbody.innerHTML = html;
+        }
+
+        // 更新页面UI
+        function updatePageUI(lang) {
+            const loc = pageLocales[lang] || pageLocales.zh;
+            document.getElementById("heroTitle").innerHTML = loc.heroTitle;
+            document.getElementById("heroDesc").innerText = loc.heroDesc;
+            document.getElementById("cert1").innerText = loc.cert1;
+            document.getElementById("cert2").innerText = loc.cert2;
+            document.getElementById("cert3").innerText = loc.cert3;
+            document.getElementById("galleryTitle").innerText = loc.galleryTitle;
+            document.getElementById("gallerySub").innerText = loc.gallerySub;
+            document.getElementById("caption1").innerText = loc.caption1;
+            document.getElementById("caption2").innerText = loc.caption2;
+            document.getElementById("caption3").innerText = loc.caption3;
+            document.getElementById("tableTitle").innerText = loc.tableTitle;
+            document.getElementById("tableSub").innerText = loc.tableSub;
+            document.getElementById("scrollHint").innerText = loc.scrollHint;
+            document.getElementById("feature1").innerText = loc.feature1;
+            document.getElementById("feature2").innerText = loc.feature2;
+            document.getElementById("feature3").innerText = loc.feature3;
+            document.getElementById("feature4").innerText = loc.feature4;
+            document.getElementById("feature5").innerText = loc.feature5;
+            document.getElementById("contactTitle").innerText = loc.contactTitle;
+            document.getElementById("contactPhone").innerText = loc.contactPhone;
+            document.getElementById("contactEmail").innerText = loc.contactEmail;
+            document.getElementById("contactAddress").innerText = loc.contactAddress;
+            document.getElementById("contactMobile").innerText = loc.contactMobile;
+            document.getElementById("formTitle").innerHTML = `<i class="fas fa-paper-plane"></i> ${loc.formTitle}`;
+            document.getElementById("submitBtnText").innerText = loc.submitBtnText;
+            renderTable(lang);
+        }
+
+        // 注册语言切换回调
+        if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+            DesertPower.onLanguageChange((lang) => {
+                updatePageUI(lang);
+            });
+            updatePageUI(DesertPower.getCurrentLang());
+        } else {
+            window.addEventListener('load', () => {
+                if (typeof DesertPower !== 'undefined' && DesertPower.onLanguageChange) {
+                    DesertPower.onLanguageChange((lang) => updatePageUI(lang));
+                    updatePageUI(DesertPower.getCurrentLang());
+                } else {
+                    console.warn("DesertPower not loaded, using default language");
+                    updatePageUI('zh');
+                }
+            });
+        }
+
+        // 表单提交
+        const form = document.getElementById('quickContact');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmailInput').value.trim();
+                const msg = document.getElementById('contactMsg').value.trim();
+                const statusDiv = document.getElementById('formStatus');
+                const getLang = () => (typeof DesertPower !== 'undefined' && DesertPower.getCurrentLang) ? DesertPower.getCurrentLang() : 'zh';
+                const currentLang = getLang();
+                const loc = pageLocales[currentLang] || pageLocales.zh;
+                if (!name || !email) {
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                    return;
+                }
+                const btn = document.getElementById('submitBtn');
+                const originalText = document.getElementById('submitBtnText').innerText;
+                try {
+                    btn.disabled = true;
+                    document.getElementById('submitBtnText').innerText = loc.sending;
+                    if (typeof DesertPower !== 'undefined' && DesertPower.emailjs) {
+                        await emailjs.send(DesertPower.emailjs.serviceId, DesertPower.emailjs.templateId, {
+                            from_name: name, from_email: email, message: msg, product: "Commercial & Industrial ESS - Residential Series"
+                        });
+                    } else {
+                        await emailjs.send("service_c8wh567", "template_jh5s1nt", {
+                            from_name: name, from_email: email, message: msg, product: "Commercial & Industrial ESS - Residential Series"
+                        });
+                    }
+                    statusDiv.style.color = "#1a4a3a";
+                    statusDiv.innerText = loc.successMsg;
+                    form.reset();
+                } catch (err) {
+                    console.error(err);
+                    statusDiv.style.color = "#b87333";
+                    statusDiv.innerText = loc.errorMsg;
+                } finally {
+                    btn.disabled = false;
+                    document.getElementById('submitBtnText').innerText = originalText;
+                    setTimeout(() => statusDiv.innerText = "", 5000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
