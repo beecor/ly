@@ -31,8 +31,8 @@
             pack2: "Liquid-cooled PACK 314Ah (52.25kWh)",
             pack3: "Fast-charge PACK 206Ah",
             pack4: "Storage PACK 280Ah (14.336kWh)",
-            footerText: "© 2025 liayang | Henan liayang Trading Co., Ltd. | Tel: +86 371 55919895 | Email: beecor@outlook.com",
-            contactTitle: "Contact Us", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+            footerText: "© 2025 liayang | Henan liayang Trading Co., Ltd. | Tel: +86 371 55919895 | Email: sales@liayang.com",
+            contactTitle: "Contact Us", contactPhone: "0371-55919895", contactEmail: "sales@liayang.com",
             contactAddress: "No.246, Daxue South Road, Zhengzhou, Henan, China", contactMobile: "+86 13383710735",
             formTitle: "Quick Inquiry", submitBtnText: "Send", sending: "Sending...",
             successMsg: "Thank you! We'll contact you soon.", errorMsg: "Failed. Please try again."
@@ -58,8 +58,8 @@
             pack2: "储能液冷PACK 314Ah (52.25kWh)",
             pack3: "工程机械快充PACK 206Ah",
             pack4: "储能PACK 280Ah (14.336kWh)",
-            footerText: "© 2025 俩羊 | 河南俩羊商贸有限公司 | 电话：0371-55919895 | 邮箱：beecor@outlook.com",
-            contactTitle: "联系我们", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+            footerText: "© 2025 俩羊 | 河南俩羊商贸有限公司 | 电话：0371-55919895 | 邮箱：sales@liayang.com",
+            contactTitle: "联系我们", contactPhone: "0371-55919895", contactEmail: "sales@liayang.com",
             contactAddress: "中国 河南郑州市大学南路246号", contactMobile: "13383710735",
             formTitle: "快速咨询", submitBtnText: "发送咨询", sending: "发送中...",
             successMsg: "感谢咨询，我们会尽快联系您！", errorMsg: "发送失败，请稍后重试。"
@@ -85,8 +85,8 @@
             pack2: "حزمة تخزين مبردة 314Ah (52.25kWh)",
             pack3: "حزمة شحن سريع 206Ah",
             pack4: "حزمة تخزين 280Ah (14.336kWh)",
-            footerText: "© 2025 ليايانغ | Henan liayang Trading Co., Ltd. | هاتف: +86 371 55919895 | بريد: beecor@outlook.com",
-            contactTitle: "اتصل بنا", contactPhone: "0371-55919895", contactEmail: "beecor@outlook.com",
+            footerText: "© 2025 ليايانغ | Henan liayang Trading Co., Ltd. | هاتف: +86 371 55919895 | بريد: sales@liayang.com",
+            contactTitle: "اتصل بنا", contactPhone: "0371-55919895", contactEmail: "sales@liayang.com",
             contactAddress: "رقم 246، طريق داشوي الجنوبي، تشنغتشو، خنان، الصين", contactMobile: "+86 13383710735",
             formTitle: "استفسار سريع", submitBtnText: "إرسال", sending: "جاري الإرسال...",
             successMsg: "شكراً، سنتصل بك قريباً.", errorMsg: "فشل الإرسال. حاول مرة أخرى."
